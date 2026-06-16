@@ -113,7 +113,7 @@ export const TestimonialCarousel = () => {
 
                 {/* Text Review */}
                 <p className="text-slate-800 font-sans text-base sm:text-lg lg:text-xl italic leading-relaxed mb-8">
-                  "{testimonials[activeIndex].review}"
+                  &ldquo;{testimonials[activeIndex].review}&rdquo;
                 </p>
               </div>
 

@@ -128,7 +128,7 @@ export const HeroSection = () => {
             */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600&auto=format&fit=crop"
+              src="/hero-image.png"
               alt="Premium modern balcony and invisible grill safety installation"
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
             />

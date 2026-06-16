@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeftRight, HelpCircle, ArrowRight } from "lucide-react";
+import { ArrowLeftRight } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 
 interface ComparisonItem {
@@ -162,6 +162,7 @@ export const ComparisonSlider = () => {
                 onMouseDown={() => setIsDragging(true)}
                 onTouchStart={() => setIsDragging(true)}
                 className="relative w-full max-w-[640px] aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-slate-200 select-none cursor-ew-resize group"
+                style={{ containerType: "inline-size" }}
               >
                 {/* After Image (Background) */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -185,7 +186,7 @@ export const ComparisonSlider = () => {
                     src={activeData.beforeImg}
                     alt="Before Protection"
                     className="absolute inset-y-0 left-0 w-full h-full object-cover max-w-none pointer-events-none"
-                    style={{ width: containerRef.current?.getBoundingClientRect().width || 640 }}
+                    style={{ width: "100cqw" }}
                     draggable={false}
                   />
                   <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur border border-white/10 text-white font-heading font-bold text-xs px-2.5 py-1 rounded-md shadow-lg pointer-events-none select-none">

@@ -36,7 +36,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-slate-600 font-sans text-sm leading-relaxed">
-              India's premier protective net installations. We secure balconies, windows, and sports grounds using high-tensile, UV-stabilized materials for absolute safety.
+              India&apos;s premier protective net installations. We secure balconies, windows, and sports grounds using high-tensile, UV-stabilized materials for absolute safety.
             </p>
             {/* Social Icons */}
             <div className="flex gap-4">

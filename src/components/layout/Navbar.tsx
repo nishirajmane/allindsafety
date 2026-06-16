@@ -26,7 +26,10 @@ export const Navbar = () => {
 
   // Close mobile menu when page changes
   useEffect(() => {
-    setIsOpen(false);
+    const handle = requestAnimationFrame(() => {
+      setIsOpen(false);
+    });
+    return () => cancelAnimationFrame(handle);
   }, [pathname]);
 
   const navLinks = [

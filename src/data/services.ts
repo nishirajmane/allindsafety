@@ -9,7 +9,6 @@ import {
   Zap, 
   Building, 
   Factory,
-  CheckCircle,
   LucideIcon
 } from "lucide-react";
 

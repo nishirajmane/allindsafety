@@ -45,7 +45,7 @@ export default function AboutPage() {
               The Evolution of Safety Net Standards
             </h3>
             <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
-              Started in Pune as a small local installation service, we recognized a major gap in the market: safety nets were often treated as cheap, unsightly plastic mesh. Residents were forced to compromise their balconies' aesthetic appeal for the sake of safety.
+              Started in Pune as a small local installation service, we recognized a major gap in the market: safety nets were often treated as cheap, unsightly plastic mesh. Residents were forced to compromise their balconies&apos; aesthetic appeal for the sake of safety.
             </p>
             <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
               We changed the narrative by introducing high-tension copolymer nylon and marine-grade SS invisible grills to India. By treating safety installations with precise engineering care, we grew to cover 8 major metropolitan regions.
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-3">Our Vision</h3>
               <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
-                To become India's primary standard for protective structures, trusted by premium high-rise architects and builders for high-fidelity invisible security solutions.
+                To become India&apos;s primary standard for protective structures, trusted by premium high-rise architects and builders for high-fidelity invisible security solutions.
               </p>
             </div>
           </Card>
