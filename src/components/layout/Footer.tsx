@@ -40,18 +40,49 @@ export const Footer = () => {
             </p>
             {/* Social Icons */}
             <div className="flex gap-4">
-              {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
-                <a
-                  key={social}
-                  href={`https://${social}.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-white hover:bg-primary/10 border border-slate-200 hover:border-primary/30 flex items-center justify-center text-slate-500 hover:text-primary transition-all duration-300 shadow-sm"
-                >
-                  <span className="sr-only">{social}</span>
-                  <span className="font-semibold">{social[0].toUpperCase()}</span>
-                </a>
-              ))}
+              {[
+                {
+                  name: "Facebook",
+                  href: "https://www.facebook.com/share/17ZmeJT6TC/",
+                  icon: (props: React.SVGProps<SVGSVGElement>) => (
+                    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "Instagram",
+                  href: "https://www.instagram.com/allindsafety?igsh=bzg3djZqZ2x0anBn",
+                  icon: (props: React.SVGProps<SVGSVGElement>) => (
+                    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "WhatsApp",
+                  href: "https://wa.me/qr/J32LE5VM3UZPP1",
+                  icon: (props: React.SVGProps<SVGSVGElement>) => (
+                    <MessageCircle {...props} />
+                  ),
+                },
+              ].map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-lg bg-white hover:bg-primary/10 border border-slate-200 hover:border-primary/30 flex items-center justify-center text-slate-500 hover:text-primary transition-all duration-300 shadow-sm"
+                  >
+                    <span className="sr-only">{social.name}</span>
+                    <Icon className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -158,7 +189,7 @@ export const Footer = () => {
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
         {/* WhatsApp Chat CTA */}
         <a
-          href="https://wa.me/919876543210?text=Hi!%20I%20am%20interested%20in%20safety%20net%20installation.%20Please%20provide%20a%20free%20quote."
+          href="https://wa.me/qr/J32LE5VM3UZPP1"
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 group relative cursor-pointer"

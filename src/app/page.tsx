@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { TrustSection } from "@/components/home/TrustSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ComparisonSlider } from "@/components/home/ComparisonSlider";
@@ -46,10 +45,8 @@ export default function Home() {
       "closes": "20:00"
     },
     "sameAs": [
-      "https://facebook.com",
-      "https://twitter.com",
-      "https://instagram.com",
-      "https://linkedin.com"
+      "https://www.facebook.com/share/17ZmeJT6TC/",
+      "https://www.instagram.com/allindsafety?igsh=bzg3djZqZ2x0anBn"
     ],
     "areaServed": [
       "Pune",
@@ -70,7 +67,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <HeroSection />
-      <TrustSection />
       <div id="services">
         <ServicesSection />
       </div>

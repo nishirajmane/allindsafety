@@ -22,7 +22,7 @@ export default function ContactPage() {
       title: "WhatsApp Quick Chat",
       value: "Chat on WhatsApp",
       sub: "Instant response for quotes",
-      href: "https://wa.me/919876543210?text=Hi!%20I%20am%20interested%20in%20safety%20net%20installation.%20Please%20provide%20a%20free%20quote.",
+      href: "https://wa.me/qr/J32LE5VM3UZPP1",
       icon: MessageSquare,
     },
     {
