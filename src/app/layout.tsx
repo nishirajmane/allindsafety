@@ -57,17 +57,7 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (window.location.pathname === '/') {
-                document.documentElement.classList.add('intro-active');
-              }
-            `,
-          }}
-        />
-      </head>
+      <head />
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <SmoothScroll>
           <Navbar />

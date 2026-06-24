@@ -7,29 +7,10 @@ import { servicesData } from "@/data/services";
 import { Select } from "@/components/ui/Select";
 
 export const HeroSection = () => {
-  const [isIntro, setIsIntro] = useState(true);
   const [quoteText, setQuoteText] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [step, setStep] = useState<"input" | "saved">("input");
-
-  useEffect(() => {
-    // Lock body scroll and set intro active class on mount
-    document.body.style.overflow = "hidden";
-    document.documentElement.classList.add("intro-active");
-
-    const timer = setTimeout(() => {
-      setIsIntro(false);
-      document.body.style.overflow = "";
-      document.documentElement.classList.remove("intro-active");
-    }, 1200);
-
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "";
-      document.documentElement.classList.remove("intro-active");
-    };
-  }, []);
 
   const contentVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -58,7 +39,7 @@ export const HeroSection = () => {
             <motion.h1
               variants={contentVariants}
               initial="hidden"
-              animate={isIntro ? "hidden" : "visible"}
+              animate="visible"
               custom={0.2}
               className="text-[44px] sm:text-[68px] md:text-[84px] lg:text-[88px] xl:text-[98px] font-black font-heading text-slate-950 leading-[0.9] tracking-tighter"
             >
@@ -68,7 +49,7 @@ export const HeroSection = () => {
             <motion.p
               variants={contentVariants}
               initial="hidden"
-              animate={isIntro ? "hidden" : "visible"}
+              animate="visible"
               custom={0.4}
               className="text-slate-500 font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
             >
@@ -82,7 +63,7 @@ export const HeroSection = () => {
             <motion.div
               variants={contentVariants}
               initial="hidden"
-              animate={isIntro ? "hidden" : "visible"}
+              animate="visible"
               custom={0.6}
               className="w-full max-w-md z-20"
             >
@@ -229,14 +210,8 @@ export const HeroSection = () => {
 
         {/* Large Wide Bottom Image Container (Preserving aspect slot to avoid layout shifts) */}
         <div className="w-full aspect-[16/9] md:aspect-[21/9] relative">
-          <motion.div
-            layout
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className={
-              isIntro
-                ? "fixed inset-0 z-[55] w-screen h-screen rounded-none bg-slate-50 overflow-hidden pointer-events-none"
-                : "absolute inset-0 overflow-hidden rounded-2xl md:rounded-[32px] border border-slate-100 shadow-xl group bg-slate-50 z-0"
-            }
+          <div
+            className="absolute inset-0 overflow-hidden rounded-2xl md:rounded-[32px] border border-slate-100 shadow-xl group bg-slate-50 z-0"
           >
             {/* 
               EDIT IMAGE HERE:
@@ -250,14 +225,14 @@ export const HeroSection = () => {
             />
             {/* Subtle gradient overlay to ground the image */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
-          </motion.div>
+          </div>
         </div>
 
         {/* Trust Badges */}
         <motion.div
           variants={contentVariants}
           initial="hidden"
-          animate={isIntro ? "hidden" : "visible"}
+          animate="visible"
           custom={0.8}
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 mt-12 border-t border-slate-100 w-full text-left"
         >
