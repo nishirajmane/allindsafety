@@ -14,7 +14,7 @@ export default function Home() {
     "image": "https://allindiaenterprises.com/og-image.jpg",
     "@id": "https://allindiaenterprises.com/#localbusiness",
     "url": "https://allindiaenterprises.com",
-    "telephone": "+919876543210",
+    "telephone": "+919797974476",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

@@ -63,7 +63,7 @@ export default async function ServicePage({ params }: PageProps) {
     "provider": {
       "@type": "LocalBusiness",
       "name": "All India Safety",
-      "telephone": "+919876543210",
+      "telephone": "+919797974476",
       "priceRange": "$$",
       "image": "https://allindiaenterprises.com/og-image.jpg",
       "address": {

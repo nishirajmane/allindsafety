@@ -128,13 +128,13 @@ export const Navbar = () => {
           {/* Call-to-Actions (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="tel:+919876543210"
+              href="tel:+919797974476"
               className="flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-sm font-semibold transition-colors"
             >
               <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
                 <Phone className="w-4 h-4 text-primary" />
               </div>
-              <span>+91 98765 43210</span>
+              <span>+91 97979 74476</span>
             </Link>
             <Button href="/contact" size="sm" variant="primary">
               Free Inspection
@@ -204,7 +204,7 @@ export const Navbar = () => {
           {/* Mobile Buttons */}
           <div className="border-t border-slate-100 pt-6 flex flex-col gap-4 mt-auto">
             <Link
-              href="tel:+919876543210"
+              href="tel:+919797974476"
               className="flex items-center gap-3 text-slate-700 hover:text-primary font-sans text-base font-semibold py-2"
             >
               <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
@@ -212,7 +212,7 @@ export const Navbar = () => {
               </div>
               <div>
                 <span className="block text-xs text-slate-400 font-bold leading-none">Call Now</span>
-                <span className="text-sm mt-1 block">+91 98765 43210</span>
+                <span className="text-sm mt-1 block">+91 97979 74476</span>
               </div>
             </Link>
             <Button href="/contact" size="md" variant="primary" className="w-full">

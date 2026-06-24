@@ -148,11 +148,11 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919797974476"
                   className="flex gap-3 items-center group font-sans text-sm text-slate-600 hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5 text-primary shrink-0" />
-                  <span className="group-hover:underline">+91 98765 43210</span>
+                  <span className="group-hover:underline">+91 97979 74476</span>
                 </a>
               </li>
               <li>
@@ -187,6 +187,17 @@ export const Footer = () => {
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        {/* Call Now CTA */}
+        <a
+          href="tel:9797974476"
+          className="w-14 h-14 rounded-full bg-primary hover:bg-teal-700 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 group relative cursor-pointer"
+        >
+          <Phone className="w-6 h-6 animate-pulse" />
+          <span className="absolute right-full mr-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+            Call: +91 97979 74476
+          </span>
+        </a>
+
         {/* WhatsApp Chat CTA */}
         <a
           href="https://wa.me/919199199976"

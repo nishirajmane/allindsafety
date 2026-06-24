@@ -14,9 +14,9 @@ export default function ContactPage() {
   const contactDetails = [
     {
       title: "Call Direct",
-      value: "+91 98765 43210",
+      value: "+91 97979 74476",
       sub: "Mon-Sun, 8am to 8pm IST",
-      href: "tel:+919876543210",
+      href: "tel:+919797974476",
       icon: Phone,
     },
     {
@@ -57,7 +57,7 @@ export default function ContactPage() {
             <div className="space-y-4 text-center lg:text-left">
               <h3 className="text-2xl font-heading font-extrabold text-slate-900">Contact Channels</h3>
               <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
-                Connect with our service representatives directly. We coordinate installations in Pune, Mumbai, Bangalore, Hyderabad, Chennai, Delhi NCR, Ahmedabad, and Nagpur.
+                Connect with our service representatives directly. We coordinate safety net installations across Pune, with our base location at Sangamwadi.
               </p>
             </div>
 
