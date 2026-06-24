@@ -44,11 +44,10 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-4 shadow-lg shadow-slate-100/50"
           : "bg-transparent py-6"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -62,7 +61,7 @@ export const Navbar = () => {
                 ALL INDIA
               </span>
               <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
-                Enterprises
+                Safety
               </span>
             </div>
           </Link>
@@ -71,9 +70,8 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             <Link
               href="/"
-              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/" ? "text-primary" : "text-slate-600"
-              }`}
+              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/" ? "text-primary" : "text-slate-600"
+                }`}
             >
               Home
             </Link>
@@ -81,9 +79,8 @@ export const Navbar = () => {
             {/* Services Dropdown */}
             <div className="relative group">
               <button
-                className={`flex items-center gap-1 font-sans text-sm font-semibold transition-colors hover:text-primary cursor-pointer ${
-                  pathname.startsWith("/services") ? "text-primary" : "text-slate-600"
-                }`}
+                className={`flex items-center gap-1 font-sans text-sm font-semibold transition-colors hover:text-primary cursor-pointer ${pathname.startsWith("/services") ? "text-primary" : "text-slate-600"
+                  }`}
               >
                 Services
                 <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
@@ -105,27 +102,24 @@ export const Navbar = () => {
 
             <Link
               href="/about"
-              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/about" ? "text-primary" : "text-slate-600"
-              }`}
+              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/about" ? "text-primary" : "text-slate-600"
+                }`}
             >
               About Us
             </Link>
 
             <Link
               href="/gallery"
-              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/gallery" ? "text-primary" : "text-slate-600"
-              }`}
+              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/gallery" ? "text-primary" : "text-slate-600"
+                }`}
             >
               Gallery
             </Link>
 
             <Link
               href="/contact"
-              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${
-                pathname === "/contact" ? "text-primary" : "text-slate-600"
-              }`}
+              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/contact" ? "text-primary" : "text-slate-600"
+                }`}
             >
               Contact
             </Link>
@@ -159,9 +153,8 @@ export const Navbar = () => {
 
       {/* Mobile Drawer Navigation */}
       <div
-        className={`lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white border-l border-slate-200 p-6 shadow-2xl transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white border-l border-slate-200 p-6 shadow-2xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center mb-8">
           <Link href="/" className="flex items-center gap-2">
@@ -183,9 +176,8 @@ export const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`font-sans text-lg font-semibold transition-colors hover:text-primary ${
-                pathname === link.href ? "text-primary" : "text-slate-700"
-              }`}
+              className={`font-sans text-lg font-semibold transition-colors hover:text-primary ${pathname === link.href ? "text-primary" : "text-slate-700"
+                }`}
             >
               {link.name}
             </Link>

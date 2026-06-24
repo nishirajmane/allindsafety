@@ -2,15 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  UserCheck, 
-  Sun, 
-  ShieldAlert, 
-  CirclePercent, 
-  Zap, 
-  HeartHandshake, 
-  Users2, 
-  ActivitySquare 
+import {
+  UserCheck,
+  Sun,
+  ShieldAlert,
+  CirclePercent,
+  Zap,
+  HeartHandshake,
+  Users2,
+  ActivitySquare
 } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 import { Card } from "../ui/Card";
@@ -107,7 +107,7 @@ export const WhyChooseUs = () => {
         <SectionHeader
           badge="Our Excellence"
           title="Engineered For Absolute Trust"
-          subtitle="Discover why thousands of households, residential societies, and construction sites choose All India Enterprises."
+          subtitle="Discover why thousands of households, residential societies, and construction sites choose All India Safety."
         />
 
         {/* Feature Grid (4x2 layout) */}

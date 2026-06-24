@@ -31,7 +31,7 @@ export const Footer = () => {
                   ALL INDIA
                 </span>
                 <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
-                  Enterprises
+                  Safety
                 </span>
               </div>
             </Link>
@@ -63,7 +63,7 @@ export const Footer = () => {
                 },
                 {
                   name: "WhatsApp",
-                  href: "https://wa.me/qr/J32LE5VM3UZPP1",
+                  href: "https://wa.me/919199199976",
                   icon: (props: React.SVGProps<SVGSVGElement>) => (
                     <MessageCircle {...props} />
                   ),
@@ -170,7 +170,7 @@ export const Footer = () => {
 
         <div className="border-t border-slate-200/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-sans text-xs text-slate-500">
-            &copy; {currentYear} All India Enterprises. All rights reserved. Designed to clean visual standards.
+            &copy; {currentYear} All India Safety. All rights reserved. Designed to clean visual standards.
           </p>
           <div className="flex gap-6 text-xs text-slate-500 font-sans">
             <Link href="/privacy" className="hover:text-slate-700">Privacy Policy</Link>
@@ -189,7 +189,7 @@ export const Footer = () => {
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
         {/* WhatsApp Chat CTA */}
         <a
-          href="https://wa.me/qr/J32LE5VM3UZPP1"
+          href="https://wa.me/919199199976"
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 group relative cursor-pointer"

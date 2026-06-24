@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { ComparisonSlider } from "@/components/home/ComparisonSlider";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { FAQSection } from "@/components/home/FAQSection";
@@ -11,7 +10,7 @@ export default function Home() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "All India Enterprises",
+    "name": "All India Safety",
     "image": "https://allindiaenterprises.com/og-image.jpg",
     "@id": "https://allindiaenterprises.com/#localbusiness",
     "url": "https://allindiaenterprises.com",
@@ -71,7 +70,6 @@ export default function Home() {
         <ServicesSection />
       </div>
       <WhyChooseUs />
-      <ComparisonSlider />
       <TestimonialCarousel />
       <CoverageMap />
       <FAQSection />

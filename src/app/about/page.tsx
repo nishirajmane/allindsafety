@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata = {
-  title: "About Us | All India Enterprises",
+  title: "About Us | All India Safety",
   description: "Learn about the mission, vision, and certified team behind India's trusted safety net installation services.",
 };
 
@@ -30,12 +30,12 @@ export default function AboutPage() {
       <div className="absolute bottom-44 right-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Page Header */}
         <SectionHeader
           badge="Our Story"
           title="Securing Indian Homes Since 2016"
-          subtitle="All India Enterprises was founded with a single mission: to eliminate structural safety hazards in high-rises and workplaces with high-end, visual-grade installations."
+          subtitle="All India Safety was founded with a single mission: to eliminate structural safety hazards in high-rises and workplaces with high-end, visual-grade installations."
         />
 
         {/* Company Story Timeline */}

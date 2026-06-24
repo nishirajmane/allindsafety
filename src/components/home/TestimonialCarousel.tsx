@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     name: "Priyanka Nair",
     city: "Mumbai",
     rating: 5,
-    review: "We were troubled by pigeons nesting in our utility balcony. The pigeon net installed by All India Enterprises has solved the problem permanently. Very clean installation and prompt response.",
+    review: "We were troubled by pigeons nesting in our utility balcony. The pigeon net installed by All India Safety has solved the problem permanently. Very clean installation and prompt response.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
   },
   {
@@ -157,9 +157,8 @@ export const TestimonialCarousel = () => {
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIndex === idx ? "w-8 bg-primary" : "bg-slate-300 hover:bg-slate-400"
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx ? "w-8 bg-primary" : "bg-slate-300 hover:bg-slate-400"
+                  }`}
               />
             ))}
           </div>

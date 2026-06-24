@@ -178,8 +178,8 @@ export const HeroSection = () => {
                     {/* Submit Actions */}
                     <div className="flex flex-col gap-2 pt-2 border-t border-slate-100 font-sans">
                       <a
-                        href={`https://wa.me/919876543210?text=${encodeURIComponent(
-                          `Hi All India Enterprises! I'd like to request a quote.\n\n*Requirement details:*\n"${quoteText}"\n\n${selectedService ? `*Service:* ${selectedService}\n` : ""
+                        href={`https://wa.me/919199199976?text=${encodeURIComponent(
+                          `Hi All India Safety! I'd like to request a quote.\n\n*Requirement details:*\n"${quoteText}"\n\n${selectedService ? `*Service:* ${selectedService}\n` : ""
                           }${selectedCity ? `*City:* ${selectedCity}\n` : ""}\nPlease send me the quotation.`
                         )}`}
                         target="_blank"

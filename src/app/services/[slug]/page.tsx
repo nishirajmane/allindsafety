@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${service.title} | All India Enterprises`,
+    title: `${service.title} | All India Safety`,
     description: service.shortDescription,
     openGraph: {
-      title: `${service.title} | All India Enterprises`,
+      title: `${service.title} | All India Safety`,
       description: service.shortDescription,
       images: [{ url: service.beforeAfterImage.after }],
     },
@@ -62,7 +62,7 @@ export default async function ServicePage({ params }: PageProps) {
     "description": service.shortDescription,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "All India Enterprises",
+      "name": "All India Safety",
       "telephone": "+919876543210",
       "priceRange": "$$",
       "image": "https://allindiaenterprises.com/og-image.jpg",
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Back Link */}
         <div className="mb-8">
           <Link

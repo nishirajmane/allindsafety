@@ -1,11 +1,12 @@
 import React from "react";
-import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { LeadForm } from "@/components/home/LeadForm";
+import { BasicMap } from "@/components/ui/map";
 
 export const metadata = {
-  title: "Contact Us | All India Enterprises",
+  title: "Contact Us | All India Safety",
   description: "Get in touch with India's premium safety net installation experts. Book a free site survey or chat with us on WhatsApp.",
 };
 
@@ -22,7 +23,7 @@ export default function ContactPage() {
       title: "WhatsApp Quick Chat",
       value: "Chat on WhatsApp",
       sub: "Instant response for quotes",
-      href: "https://wa.me/qr/J32LE5VM3UZPP1",
+      href: "https://wa.me/919199199976",
       icon: MessageSquare,
     },
     {
@@ -41,7 +42,7 @@ export default function ContactPage() {
       <div className="absolute bottom-44 right-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <SectionHeader
           badge="Get in Touch"
@@ -50,7 +51,7 @@ export default function ContactPage() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
-          
+
           {/* Info Side */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4 text-center lg:text-left">
@@ -99,11 +100,11 @@ export default function ContactPage() {
                 Headquarters Address
               </h4>
               <p className="text-slate-600 font-sans text-sm leading-relaxed mb-6">
-                All India Enterprises <br />
+                All India Safety <br />
                 Floor 3, Tech Park Central, Sector 5, <br />
                 Koregaon Park, Pune, Maharashtra - 411001
               </p>
-              
+
               <h4 className="font-heading font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
                 Working Hours
@@ -114,20 +115,14 @@ export default function ContactPage() {
               </p>
             </Card>
 
-            {/* Styled Map Placeholder Visual */}
-            <Card glowEffect={false} className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-slate-200 shadow-md p-4 flex flex-col justify-end bg-slate-50">
-              <div className="absolute inset-0 opacity-15 pointer-events-none bg-grid-pattern" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center animate-ping absolute" />
-                <div className="w-8 h-8 rounded-full bg-secondary border border-white flex items-center justify-center text-white relative shadow-lg">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-              </div>
-              <div className="relative z-10 text-center md:text-left bg-white border border-slate-200 p-3 rounded-xl shadow-lg">
+            {/* Real Interactive Map */}
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-50">
+              <BasicMap />
+              <div className="absolute bottom-4 left-4 z-20 text-left bg-white border border-slate-200 p-3 rounded-xl shadow-lg">
                 <span className="block text-xs font-heading font-bold text-slate-900">Pune HQ Office</span>
-                <span className="text-[10px] text-slate-500 font-sans mt-0.5 block">Koregaon Park Road, Lane 5</span>
+                <span className="text-[10px] text-slate-500 font-sans mt-0.5 block">Sangamwadi, Pune</span>
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* Form Side */}

@@ -42,14 +42,14 @@ export const CoverageMap = () => {
         <SectionHeader
           badge="National Coverage"
           title="Where We Install Safety"
-          subtitle="All India Enterprises operates dedicated consultant and installer crews across major Indian metros, offering rapid on-site inspections."
+          subtitle="All India Safety operates dedicated consultant and installer crews across major Indian metros, offering rapid on-site inspections."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Map Column (stylized SVG map with radar indicators) */}
           <div className="lg:col-span-7 flex justify-center w-full">
             <div className="relative w-full max-w-[500px] aspect-[4/5] bg-white rounded-3xl border border-slate-200/80 p-8 overflow-hidden select-none shadow-md">
-              
+
               {/* Stylized background India map outline */}
               <div className="absolute inset-0 opacity-15 pointer-events-none flex items-center justify-center">
                 <svg className="w-[85%] h-[85%] text-primary" viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="0.5">
@@ -71,19 +71,16 @@ export const CoverageMap = () => {
                   style={{ left: `${city.x}%`, top: `${city.y}%` }}
                 >
                   {/* Outer Pulsing Ring */}
-                  <div className={`absolute -inset-2 rounded-full animate-ping duration-1000 ${
-                    selectedCity.id === city.id ? "bg-secondary/40" : "bg-primary/20 group-hover:bg-primary/30"
-                  }`} />
-                  
+                  <div className={`absolute -inset-2 rounded-full animate-ping duration-1000 ${selectedCity.id === city.id ? "bg-secondary/40" : "bg-primary/20 group-hover:bg-primary/30"
+                    }`} />
+
                   {/* Core solid dot */}
-                  <div className={`w-3.5 h-3.5 rounded-full border border-white shadow-md transition-all duration-300 ${
-                    selectedCity.id === city.id ? "bg-secondary scale-125" : "bg-primary-light group-hover:bg-secondary"
-                  }`} />
+                  <div className={`w-3.5 h-3.5 rounded-full border border-white shadow-md transition-all duration-300 ${selectedCity.id === city.id ? "bg-secondary scale-125" : "bg-primary-light group-hover:bg-secondary"
+                    }`} />
 
                   {/* Tiny Label (shows on hover or active) */}
-                  <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2 py-0.5 rounded bg-slate-900/95 text-[10px] font-semibold text-white border border-slate-800 shadow-lg pointer-events-none transition-opacity duration-300 ${
-                    selectedCity.id === city.id ? "opacity-100 scale-100" : "opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"
-                  } whitespace-nowrap z-30`}>
+                  <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2 py-0.5 rounded bg-slate-900/95 text-[10px] font-semibold text-white border border-slate-800 shadow-lg pointer-events-none transition-opacity duration-300 ${selectedCity.id === city.id ? "opacity-100 scale-100" : "opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"
+                    } whitespace-nowrap z-30`}>
                     {city.name}
                   </span>
                 </button>
@@ -118,7 +115,7 @@ export const CoverageMap = () => {
 
                   {/* List details */}
                   <div className="grid grid-cols-1 gap-5 pt-4 border-t border-slate-100">
-                    
+
                     {/* Installs Done */}
                     <div className="flex gap-4 items-center">
                       <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200/50 flex items-center justify-center text-primary shrink-0">

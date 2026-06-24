@@ -52,16 +52,16 @@ export const LeadForm = () => {
     reset();
 
     // Prefilled lead details redirect to WhatsApp
-    const textMessage = `Hi All India Enterprises! %0A%0A*New Lead Submitted:*%0A- *Name:* ${encodeURIComponent(
+    const textMessage = `Hi All India Safety! %0A%0A*New Lead Submitted:*%0A- *Name:* ${encodeURIComponent(
       data.fullName
     )}%0A- *Phone:* ${encodeURIComponent(data.phone)}%0A- *City:* ${encodeURIComponent(
       data.city
     )}%0A- *Service:* ${encodeURIComponent(data.service)}%0A- *Message:* ${encodeURIComponent(
       data.message || "No comments"
     )}`;
-    
+
     setTimeout(() => {
-      window.open("https://wa.me/qr/J32LE5VM3UZPP1", "_blank");
+      window.open(`https://wa.me/919199199976?text=${textMessage}`, "_blank");
     }, 1200);
   };
 
@@ -133,9 +133,8 @@ export const LeadForm = () => {
                         type="text"
                         placeholder="John Doe"
                         {...register("fullName")}
-                        className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all ${
-                          errors.fullName ? "border-rose-500" : "border-slate-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all ${errors.fullName ? "border-rose-500" : "border-slate-200"
+                          }`}
                       />
                     </div>
                     {errors.fullName && (
@@ -158,9 +157,8 @@ export const LeadForm = () => {
                           type="tel"
                           placeholder="9876543210"
                           {...register("phone")}
-                          className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all ${
-                            errors.phone ? "border-rose-500" : "border-slate-200"
-                          }`}
+                          className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all ${errors.phone ? "border-rose-500" : "border-slate-200"
+                            }`}
                         />
                       </div>
                       {errors.phone && (
@@ -179,9 +177,8 @@ export const LeadForm = () => {
                         </div>
                         <select
                           {...register("city")}
-                          className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all appearance-none ${
-                            errors.city ? "border-rose-500" : "border-slate-200"
-                          }`}
+                          className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all appearance-none ${errors.city ? "border-rose-500" : "border-slate-200"
+                            }`}
                         >
                           <option value="">Select City</option>
                           {citiesList.map((city) => (
@@ -208,9 +205,8 @@ export const LeadForm = () => {
                       </div>
                       <select
                         {...register("service")}
-                        className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all appearance-none ${
-                          errors.service ? "border-rose-500" : "border-slate-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all appearance-none ${errors.service ? "border-rose-500" : "border-slate-200"
+                          }`}
                       >
                         <option value="">Select Service</option>
                         {servicesData.map((service) => (
@@ -249,7 +245,7 @@ export const LeadForm = () => {
                       Request Free Quote
                     </Button>
                     <a
-                      href="https://wa.me/qr/J32LE5VM3UZPP1"
+                      href="https://wa.me/919199199976"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center font-heading font-semibold rounded-lg px-6 py-3 border border-emerald-500/20 hover:border-emerald-500 bg-emerald-500/5 hover:bg-emerald-500/10 text-emerald-600 transition-all shadow-sm active:scale-[0.98] cursor-pointer"

@@ -2,7 +2,7 @@
 
 ## PROJECT OVERVIEW
 
-Build a premium, conversion-focused website for **All India Enterprises**, India's trusted safety net installation company.
+Build a premium, conversion-focused website for **All India Safety**, India's trusted safety net installation company.
 
 The website should feel modern, premium, trustworthy, and enterprise-grade while maintaining strong local business conversion optimization.
 
@@ -16,7 +16,7 @@ The website must NOT resemble a typical local service website.
 
 ## Brand Name
 
-All India Enterprises
+All India Safety
 
 ## Industry
 
