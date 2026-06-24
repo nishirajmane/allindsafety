@@ -23,7 +23,7 @@ const galleryItems: GalleryItem[] = [
     title: "18th Floor Balcony Netting",
     category: "balcony",
     categoryLabel: "Balcony Nets",
-    city: "Pune",
+    city: "Koregaon Park, Pune",
     img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
     description: "Fully tensioned translucent balcony nets installed to protect active pets without compromising valley views."
   },
@@ -32,7 +32,7 @@ const galleryItems: GalleryItem[] = [
     title: "Balcony Pigeon Shield",
     category: "pigeon",
     categoryLabel: "Pigeon Nets",
-    city: "Mumbai",
+    city: "Kothrud, Pune",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop",
     description: "High-density knotted bird nets sealing the balcony boundaries completely. Blocks pigeon nesting and bird clutter."
   },
@@ -41,7 +41,7 @@ const galleryItems: GalleryItem[] = [
     title: "Modern Invisible Grill Setup",
     category: "grills",
     categoryLabel: "Invisible Grills",
-    city: "Pune",
+    city: "Sangamwadi, Pune",
     img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop",
     description: "316 marine-grade vertical invisible grills. Robust anti-fall safeguard looking completely frameless."
   },
@@ -50,7 +50,7 @@ const galleryItems: GalleryItem[] = [
     title: "Rooftop Cricket Practice Net",
     category: "sports",
     categoryLabel: "Sports Nets",
-    city: "Bangalore",
+    city: "Baner, Pune",
     img: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=800&auto=format&fit=crop",
     description: "Multi-layered knotted enclosure cage on building terrace, designed for cricket training and leather ball impacts."
   },
@@ -59,7 +59,7 @@ const galleryItems: GalleryItem[] = [
     title: "Terrace Balcony Safety Guard",
     category: "balcony",
     categoryLabel: "Balcony Nets",
-    city: "Delhi NCR",
+    city: "Viman Nagar, Pune",
     img: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop",
     description: "Child protection safety netting mounted onto glass balustrade balconies for reinforced defense."
   },
@@ -68,7 +68,7 @@ const galleryItems: GalleryItem[] = [
     title: "Corporate Duct Area Netting",
     category: "pigeon",
     categoryLabel: "Pigeon Nets",
-    city: "Hyderabad",
+    city: "Kharadi, Pune",
     img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop",
     description: "Deep shaft duct area net installation securing ventilation channels against pigeon clutter and dropping accumulation."
   },
@@ -77,7 +77,7 @@ const galleryItems: GalleryItem[] = [
     title: "Turf Football Boundary Net",
     category: "sports",
     categoryLabel: "Sports Nets",
-    city: "Chennai",
+    city: "Hinjawadi, Pune",
     img: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop",
     description: "Heavy-duty outdoor perimeter netting setup for private football turf complex. Withstands extreme ball speeds."
   },
@@ -86,7 +86,7 @@ const galleryItems: GalleryItem[] = [
     title: "Low-Profile Invisible Grill Setup",
     category: "grills",
     categoryLabel: "Invisible Grills",
-    city: "Mumbai",
+    city: "Hadapsar, Pune",
     img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop",
     description: "Horizontal grid invisible grills designed to match luxury bedroom window layouts, securing toddlers."
   },
@@ -95,7 +95,7 @@ const galleryItems: GalleryItem[] = [
     title: "Premium Bird Exclusion Mesh",
     category: "pigeon",
     categoryLabel: "Pigeon Nets",
-    city: "Ahmedabad",
+    city: "Aundh, Pune",
     img: "https://images.unsplash.com/photo-1599809275671-b5941cabc7a5?q=80&w=800&auto=format&fit=crop",
     description: "Specialized non-lethal spikes and nets installed on outdoor air conditioning units and ledge boundaries."
   }
@@ -129,7 +129,7 @@ export default function GalleryPage() {
         <SectionHeader
           badge="Portfolio Gallery"
           title="Our Premium Installations"
-          subtitle="Browse high-resolution photographs of our real-life safety net installations across commercial turfs, homes, and high-rise apartments."
+          subtitle="Browse high-resolution photographs of our real-life safety net installations in Pune, including commercial turfs, homes, and high-rise apartments."
         />
 
         {/* Filter Tabs */}

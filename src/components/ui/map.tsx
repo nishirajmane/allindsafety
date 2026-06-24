@@ -85,8 +85,8 @@ interface MapTileLayerProps {
 }
 
 export function MapTileLayer({
-  url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-  attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  url = "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+  attribution = "&copy; Google",
 }: MapTileLayerProps) {
   const map = useContext(MapContext);
 
@@ -117,4 +117,41 @@ export function BasicMap() {
       <MapTileLayer />
     </Map>
   );
+}
+
+interface MapMarkerProps {
+  position: LatLngExpression;
+  onClick?: () => void;
+  title?: string;
+}
+
+export function MapMarker({ position, onClick, title }: MapMarkerProps) {
+  const map = useContext(MapContext);
+
+  useEffect(() => {
+    if (!map) return;
+
+    let marker: any;
+    import("leaflet").then((L) => {
+      if (!map) return;
+      marker = L.marker(position).addTo(map);
+      if (onClick) {
+        marker.on("click", onClick);
+      }
+      if (title) {
+        marker.bindTooltip(title, {
+          permanent: false,
+          direction: "top",
+        });
+      }
+    });
+
+    return () => {
+      if (marker && map) {
+        marker.remove();
+      }
+    };
+  }, [map, position, onClick, title]);
+
+  return null;
 }

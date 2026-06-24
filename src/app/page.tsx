@@ -18,7 +18,7 @@ export default function Home() {
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Tech Park Central, Sector 5, Koregaon Park",
+      "streetAddress": "Sangamwadi",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411001",
@@ -48,14 +48,7 @@ export default function Home() {
       "https://www.instagram.com/allindsafety?igsh=bzg3djZqZ2x0anBn"
     ],
     "areaServed": [
-      "Pune",
-      "Mumbai",
-      "Bangalore",
-      "Hyderabad",
-      "Chennai",
-      "Delhi NCR",
-      "Ahmedabad",
-      "Nagpur"
+      "Pune"
     ]
   };
 

@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: PageProps) {
       "image": "https://allindiaenterprises.com/og-image.jpg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Tech Park Central, Sector 5, Koregaon Park",
+        "streetAddress": "Sangamwadi",
         "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "postalCode": "411001",
@@ -76,14 +76,7 @@ export default async function ServicePage({ params }: PageProps) {
       }
     },
     "areaServed": [
-      "Pune",
-      "Mumbai",
-      "Bangalore",
-      "Hyderabad",
-      "Chennai",
-      "Delhi NCR",
-      "Ahmedabad",
-      "Nagpur"
+      "Pune"
     ]
   };
 

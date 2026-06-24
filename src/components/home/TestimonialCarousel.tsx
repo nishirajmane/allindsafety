@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Rohan Deshmukh",
-    city: "Pune",
+    city: "Koregaon Park, Pune",
     rating: 5,
     review: "Installed invisible grills and balcony safety nets for our 12th-floor apartment. The team was extremely professional. They completed the work in 2 hours and cleaned up everything. The view is completely uncompromised!",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     name: "Priyanka Nair",
-    city: "Mumbai",
+    city: "Kothrud, Pune",
     rating: 5,
     review: "We were troubled by pigeons nesting in our utility balcony. The pigeon net installed by All India Safety has solved the problem permanently. Very clean installation and prompt response.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     name: "Karthik Reddy",
-    city: "Bangalore",
+    city: "Baner, Pune",
     rating: 5,
     review: "Excellent sports net installation for our residential society cricket practice cage. Heavy-duty mesh quality and very sturdy pole setup. Highly recommended for any structural net requirements.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     name: "Ananya Sharma",
-    city: "Delhi",
+    city: "Viman Nagar, Pune",
     rating: 5,
     review: "Really impressed with the children's safety net installation. With a toddler in the house, safety was my topmost priority. The double anchor joints they used are very reassuring.",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
   {
     id: 5,
     name: "Suresh Patel",
-    city: "Ahmedabad",
+    city: "Sangamwadi, Pune",
     rating: 5,
     review: "Great customer support and very reasonable pricing. We had monkey intrusion issues, and their heavy-duty monkey safety net has completely resolved it. Sturdy material!",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop"
@@ -88,7 +88,7 @@ export const TestimonialCarousel = () => {
         <SectionHeader
           badge="Reviews & Feedback"
           title="What Our Customers Say"
-          subtitle="Read honest reviews from families and enterprises across India who trust us to secure their living and working spaces."
+          subtitle="Read honest reviews from families and enterprises in Pune who trust us to secure their living and working spaces."
         />
 
         {/* Carousel Outer Layout */}

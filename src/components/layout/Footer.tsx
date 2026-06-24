@@ -143,7 +143,7 @@ export const Footer = () => {
               <li className="flex gap-3 items-start">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="font-sans text-sm text-slate-600 leading-relaxed">
-                  Head Office: Sector 5, Koregaon Park, Pune, Maharashtra - 411001
+                  Address: Sangamwadi, Pune, Maharashtra - 411001
                 </span>
               </li>
               <li>

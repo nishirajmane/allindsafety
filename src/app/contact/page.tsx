@@ -97,12 +97,12 @@ export default function ContactPage() {
             <Card glowEffect={true} className="p-6 bg-white border border-slate-200/80 text-left shadow-sm">
               <h4 className="font-heading font-bold text-slate-900 text-base mb-4 flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-primary" />
-                Headquarters Address
+                Address
               </h4>
               <p className="text-slate-600 font-sans text-sm leading-relaxed mb-6">
                 All India Safety <br />
-                Floor 3, Tech Park Central, Sector 5, <br />
-                Koregaon Park, Pune, Maharashtra - 411001
+                Sangamwadi, Pune, <br />
+                Maharashtra - 411001
               </p>
 
               <h4 className="font-heading font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
@@ -119,7 +119,7 @@ export default function ContactPage() {
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-50">
               <BasicMap />
               <div className="absolute bottom-4 left-4 z-20 text-left bg-white border border-slate-200 p-3 rounded-xl shadow-lg">
-                <span className="block text-xs font-heading font-bold text-slate-900">Pune HQ Office</span>
+                <span className="block text-xs font-heading font-bold text-slate-900">Pune Office</span>
                 <span className="text-[10px] text-slate-500 font-sans mt-0.5 block">Sangamwadi, Pune</span>
               </div>
             </div>

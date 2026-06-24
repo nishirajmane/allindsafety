@@ -9,7 +9,7 @@ import { Select } from "@/components/ui/Select";
 export const HeroSection = () => {
   const [quoteText, setQuoteText] = useState("");
   const [selectedService, setSelectedService] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState("Pune");
   const [step, setStep] = useState<"input" | "saved">("input");
 
   const contentVariants = {
@@ -168,7 +168,7 @@ export const HeroSection = () => {
                           value={selectedCity}
                           onValueChange={setSelectedCity}
                           placeholder="Select City..."
-                          options={["Pune", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Delhi NCR", "Ahmedabad", "Nagpur"].map(
+                          options={["Pune"].map(
                             (city) => ({ label: city, value: city })
                           )}
                         />

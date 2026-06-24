@@ -37,7 +37,7 @@ export const LeadForm = () => {
     defaultValues: {
       fullName: "",
       phone: "",
-      city: "",
+      city: "Pune",
       service: "",
       message: "",
     },
@@ -65,7 +65,7 @@ export const LeadForm = () => {
     }, 1200);
   };
 
-  const citiesList = ["Pune", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Delhi NCR", "Ahmedabad", "Nagpur"];
+  const citiesList = ["Pune"];
 
   return (
     <section id="quote-form" className="py-24 relative overflow-hidden bg-slate-100/10">
