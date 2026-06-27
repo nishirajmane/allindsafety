@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, ShieldCheck, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "../ui/Button";
 import { servicesData } from "@/data/services";
 
@@ -52,13 +52,15 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo / Brand Name */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-              <ShieldCheck className="w-6 h-6 text-white" />
-            </div>
+          <Link href="/" className="flex items-center gap-3 group">
+            <img
+              src="/logo.png"
+              alt="Allind Safety Logo"
+              className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            />
             <div className="flex flex-col">
               <span className="font-heading font-extrabold text-xl md:text-2xl text-slate-900 tracking-tight leading-none">
-                ALL INDIA
+                ALLIND
               </span>
               <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
                 Safety
@@ -157,11 +159,13 @@ export const Navbar = () => {
           }`}
       >
         <div className="flex justify-between items-center mb-8">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-heading font-extrabold text-lg text-slate-900">ALL INDIA</span>
+          <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
+            <img
+              src="/logo.png"
+              alt="Allind Safety Logo"
+              className="h-11 w-auto object-contain"
+            />
+            <span className="font-heading font-extrabold text-lg text-slate-900">ALLIND</span>
           </Link>
           <button
             onClick={() => setIsOpen(false)}

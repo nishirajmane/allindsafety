@@ -11,8 +11,8 @@ import { servicesData } from "@/data/services";
 export const ServicesSection = () => {
   const [showAll, setShowAll] = React.useState(false);
 
-  // Take first 5 services or all 8 depending on state
-  const displayServices = showAll ? servicesData.slice(0, 8) : servicesData.slice(0, 5);
+  // Take first 5 services or all 12 depending on state
+  const displayServices = showAll ? servicesData : servicesData.slice(0, 5);
 
   const containerVariants = {
     hidden: {},
@@ -36,7 +36,7 @@ export const ServicesSection = () => {
     },
   };
 
-  // Bento grid configurations for 8 items.
+  // Bento grid configurations for 12 items.
   // We configure layout mapping for each item index (desktop 3-column, tablet 2-column, and mobile 1-column).
   const bentoLayouts = [
     {
@@ -79,6 +79,26 @@ export const ServicesSection = () => {
       span: "lg:col-span-3 md:col-span-2 col-span-1",
       height: "h-[320px] sm:h-[350px] lg:h-[380px]",
     },
+    {
+      // Index 8: Bird Protection Nets (1 col)
+      span: "lg:col-span-1 md:col-span-1 col-span-1",
+      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+    },
+    {
+      // Index 9: Cricket Nets (1 col)
+      span: "lg:col-span-1 md:col-span-1 col-span-1",
+      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+    },
+    {
+      // Index 10: Duct Area Safety Nets (1 col)
+      span: "lg:col-span-1 md:col-span-1 col-span-1",
+      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+    },
+    {
+      // Index 11: Industrial Safety Nets (3 cols on desktop, 2 cols on tablet)
+      span: "lg:col-span-3 md:col-span-2 col-span-1",
+      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+    },
   ];
 
   return (
@@ -97,6 +117,7 @@ export const ServicesSection = () => {
 
         {/* Bento Grid layout */}
         <motion.div
+          key={showAll ? "all" : "short"}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

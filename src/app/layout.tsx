@@ -18,21 +18,21 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "All India Safety | Premium Safety Net Installation Experts",
+  title: "Allind Safety | Premium Safety Net Installation Experts",
   description: "Protecting families, pets, and properties with premium-grade safety net installations, invisible grills, pigeon nets, and sports nets across India. Get a free inspection today.",
   metadataBase: new URL("https://allindiaenterprises.com"),
   keywords: ["Safety Nets India", "Balcony Safety Nets", "Pigeon Nets", "Invisible Grills", "Bird Protection Nets", "Children Safety Nets", "Sports Nets"],
   openGraph: {
-    title: "All India Safety | Premium Safety Net Installation Experts",
+    title: "Allind Safety | Premium Safety Net Installation Experts",
     description: "Protecting families, pets, and properties with premium-grade safety net installations across India. Contact us for a free site inspection.",
     url: "https://allindiaenterprises.com",
-    siteName: "All India Safety",
+    siteName: "Allind Safety",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "All India Safety Safety Net Installations",
+        alt: "Allind Safety Safety Net Installations",
       },
     ],
     locale: "en_IN",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "All India Safety | Premium Safety Net Installation Experts",
+    title: "Allind Safety | Premium Safety Net Installation Experts",
     description: "Protecting families, pets, and properties with premium-grade safety net installations across India. Contact us for a free site inspection.",
     images: ["/og-image.jpg"],
   },

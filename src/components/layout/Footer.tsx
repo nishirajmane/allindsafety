@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, Phone, Mail, MapPin, MessageCircle, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, ArrowUp } from "lucide-react";
 import { servicesData } from "@/data/services";
 
 export const Footer = () => {
@@ -22,13 +22,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-lg">
-                <ShieldCheck className="w-6 h-6 text-white" />
-              </div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <img
+                src="/logo.png"
+                alt="Allind Safety Logo"
+                className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="flex flex-col">
                 <span className="font-heading font-extrabold text-xl text-slate-900 tracking-tight leading-none">
-                  ALL INDIA
+                  ALLIND
                 </span>
                 <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
                   Safety
@@ -170,7 +172,7 @@ export const Footer = () => {
 
         <div className="border-t border-slate-200/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-sans text-xs text-slate-500">
-            &copy; {currentYear} All India Safety. All rights reserved. Designed to clean visual standards.
+            &copy; {currentYear} Allind Safety. All rights reserved. Designed to clean visual standards.
           </p>
           <div className="flex gap-6 text-xs text-slate-500 font-sans">
             <Link href="/privacy" className="hover:text-slate-700">Privacy Policy</Link>
