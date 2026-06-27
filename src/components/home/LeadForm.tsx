@@ -8,6 +8,7 @@ import { Phone, User, MapPin, Layers, MessageSquare, Send, CheckCircle2, Message
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { servicesData } from "@/data/services";
+import { locationsData } from "@/data/locations";
 
 // Validation Schema using Zod
 const formSchema = z.object({
@@ -65,7 +66,10 @@ export const LeadForm = () => {
     }, 1200);
   };
 
-  const citiesList = ["Pune"];
+  const citiesList = [
+    "Pune (All Areas)",
+    ...locationsData.map((loc) => `${loc.name}, Pune`),
+  ];
 
   return (
     <section id="quote-form" className="py-24 relative overflow-hidden bg-slate-100/10">
@@ -169,7 +173,7 @@ export const LeadForm = () => {
                     {/* City Select */}
                     <div>
                       <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">
-                        Select City
+                        Select Area
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -180,7 +184,7 @@ export const LeadForm = () => {
                           className={`w-full pl-10 pr-4 py-3 bg-slate-50 border rounded-xl text-slate-900 placeholder-slate-400 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary focus:bg-white transition-all appearance-none ${errors.city ? "border-rose-500" : "border-slate-200"
                             }`}
                         >
-                          <option value="">Select City</option>
+                          <option value="">Select Area / Location</option>
                           {citiesList.map((city) => (
                             <option key={city} value={city} className="bg-white text-slate-900">
                               {city}

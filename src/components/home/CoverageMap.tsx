@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Shield, Users, Clock, CheckCircle } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 import { Card } from "../ui/Card";
 import { Map, MapTileLayer, MapMarker } from "../ui/map";
+import { locationsData } from "@/data/locations";
 import type { LatLngExpression } from "leaflet";
 
 interface CityData {
@@ -19,7 +21,16 @@ interface CityData {
 }
 
 const cities: CityData[] = [
-  { id: "pune", name: "Sangamwadi, Pune", installs: "1,800+", teams: 4, responseTime: "2 Hours", status: "Base Location", coordinates: [18.5391, 73.8769] },
+  { id: "pune-hq", name: "Sangamwadi (Pune HQ)", installs: "1,800+", teams: 4, responseTime: "2 Hours", status: "Base Location", coordinates: [18.5391, 73.8769] },
+  ...locationsData.map((loc, idx) => ({
+    id: loc.slug,
+    name: `${loc.name}, Pune`,
+    installs: `${220 + (idx * 30)}+`,
+    teams: 2 + (idx % 2),
+    responseTime: "2 Hours",
+    status: "Active Coverage",
+    coordinates: loc.coordinates,
+  }))
 ];
 
 export const CoverageMap = () => {
@@ -42,7 +53,7 @@ export const CoverageMap = () => {
           {/* Map Column (real Leaflet Map with Google Maps Tiles) */}
           <div className="lg:col-span-7 flex justify-center w-full z-20">
             <div className="relative w-full max-w-[500px] aspect-[4/5] bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-md min-h-[400px]">
-              <Map center={[18.5391, 73.8769]} zoom={15} className="w-full h-full">
+              <Map center={[18.5580, 73.8500]} zoom={11} className="w-full h-full">
                 <MapTileLayer />
                 {cities.map((city) => (
                   <MapMarker
@@ -121,10 +132,21 @@ export const CoverageMap = () => {
                           Within {selectedCity.responseTime}
                         </span>
                       </div>
-                    </div>
-
                   </div>
-                </Card>
+
+                  {selectedCity.id !== "pune-hq" && (
+                    <div className="pt-4 border-t border-slate-100">
+                      <Link
+                        href={`/locations/${selectedCity.id}`}
+                        className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-teal-700 text-white font-heading font-bold text-xs uppercase tracking-wider px-4 py-3.5 rounded-xl transition-all duration-300 shadow shadow-teal-500/10 cursor-pointer animate-pulse"
+                      >
+                        View Services in {selectedCity.name.split(",")[0]} &rarr;
+                      </Link>
+                    </div>
+                  )}
+
+                </div>
+              </Card>
               </motion.div>
             </AnimatePresence>
           </div>

@@ -5,6 +5,8 @@ import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { FAQSection } from "@/components/home/FAQSection";
 import { LeadForm } from "@/components/home/LeadForm";
+import { locationsData } from "@/data/locations";
+import { servicesData } from "@/data/services";
 
 export default function Home() {
   const localBusinessSchema = {
@@ -15,7 +17,7 @@ export default function Home() {
     "@id": "https://allindiaenterprises.com/#localbusiness",
     "url": "https://allindiaenterprises.com",
     "telephone": "+919797974476",
-    "priceRange": "$$",
+    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sangamwadi",
@@ -48,8 +50,28 @@ export default function Home() {
       "https://www.instagram.com/allindsafety?igsh=bzg3djZqZ2x0anBn"
     ],
     "areaServed": [
-      "Pune"
-    ]
+      {
+        "@type": "AdministrativeArea",
+        "name": "Pune"
+      },
+      ...locationsData.map((loc) => ({
+        "@type": "AdministrativeArea",
+        "name": `${loc.name}, Pune`
+      }))
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Safety Net Installation Services",
+      "itemListElement": servicesData.map((service) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.shortDescription,
+          "url": `https://allindiaenterprises.com/services/${service.slug}`
+        }
+      }))
+    }
   };
 
   return (

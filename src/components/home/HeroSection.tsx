@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Users, Award, Zap } from "lucide-react";
 import { servicesData } from "@/data/services";
+import { locationsData } from "@/data/locations";
 import { Select } from "@/components/ui/Select";
 
 export const HeroSection = () => {
@@ -167,10 +168,14 @@ export const HeroSection = () => {
                         <Select
                           value={selectedCity}
                           onValueChange={setSelectedCity}
-                          placeholder="Select City..."
-                          options={["Pune"].map(
-                            (city) => ({ label: city, value: city })
-                          )}
+                          placeholder="Select Area..."
+                          options={[
+                            { label: "Pune (All Areas)", value: "Pune" },
+                            ...locationsData.map((loc) => ({
+                              label: `${loc.name}, Pune`,
+                              value: `${loc.name}, Pune`,
+                            })),
+                          ]}
                         />
                       </div>
                     </div>

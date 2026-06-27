@@ -4,8 +4,10 @@ import { Metadata } from "next";
 import { CheckCircle2, Shield, Calendar, Award, Zap, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { servicesData } from "@/data/services";
+import { locationsData } from "@/data/locations";
 import { Card } from "@/components/ui/Card";
 import { LeadForm } from "@/components/home/LeadForm";
+import { MapPin } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -152,6 +154,31 @@ export default async function ServicePage({ params }: PageProps) {
                 })}
               </div>
             </Card>
+          </div>
+        </div>
+
+        {/* Service Coverage Areas Section */}
+        <div className="border-t border-slate-200 pt-12 mb-16">
+          <div className="max-w-3xl mb-8">
+            <h2 className="text-2xl font-heading font-extrabold text-slate-900 tracking-tight mb-3 flex items-center gap-2">
+              <MapPin className="w-5.5 h-5.5 text-primary" />
+              Service Areas for {service.title} in Pune
+            </h2>
+            <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
+              We provide professional measurement, customized options, and expert installation services for <strong>{service.title.toLowerCase()}</strong> across the entire Pune metropolitan area and Pimpri-Chinchwad (PCMC). Select your nearest locality for fast local response:
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {locationsData.map((loc) => (
+              <Link
+                key={loc.id}
+                href={`/locations/${loc.slug}`}
+                className="inline-flex items-center gap-1.5 bg-white hover:bg-slate-50 border border-slate-200 hover:border-primary/40 text-slate-700 hover:text-primary transition-all duration-300 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold font-sans shadow-sm"
+              >
+                <span>{loc.name}</span>
+                <span className="text-[10px] text-slate-400 font-normal">PIN: {loc.postalCode}</span>
+              </Link>
+            ))}
           </div>
         </div>
 

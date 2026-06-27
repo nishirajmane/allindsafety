@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, MessageCircle, ArrowUp } from "lucide-react";
 import { servicesData } from "@/data/services";
+import { locationsData } from "@/data/locations";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +20,7 @@ export const Footer = () => {
       <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group">
@@ -131,6 +132,33 @@ export const Footer = () => {
               <li>
                 <Link href="/contact#faq" className="font-sans text-sm text-slate-600 hover:text-primary transition-colors">
                   Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h3 className="font-heading font-bold text-slate-800 text-sm tracking-wider uppercase mb-6">
+              Service Areas
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {locationsData.slice(0, 6).map((loc) => (
+                <li key={loc.id}>
+                  <Link
+                    href={`/locations/${loc.slug}`}
+                    className="font-sans text-sm text-slate-600 hover:text-primary transition-colors block"
+                  >
+                    Safety Nets in {loc.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/locations"
+                  className="font-sans text-sm text-primary font-semibold hover:underline block"
+                >
+                  All Locations &rarr;
                 </Link>
               </li>
             </ul>

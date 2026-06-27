@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 import { Button } from "../ui/Button";
 import { servicesData } from "@/data/services";

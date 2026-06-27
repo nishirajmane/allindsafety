@@ -36,6 +36,7 @@ export const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Locations", href: "/locations" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -116,6 +117,14 @@ export const Navbar = () => {
                 }`}
             >
               Gallery
+            </Link>
+
+            <Link
+              href="/locations"
+              className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname.startsWith("/locations") ? "text-primary" : "text-slate-600"
+                }`}
+            >
+              Locations
             </Link>
 
             <Link
