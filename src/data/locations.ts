@@ -75,7 +75,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Professional Safety Net Solutions in Wakad, PCMC",
     description: "Located in the Pimpri-Chinchwad area, Wakad is home to hundreds of multi-story housing societies. The height of these buildings creates safety risks for young children and pets, while balconies are frequently targeted by pigeons. We offer highly durable safety nets and bird exclusion systems tailored for high-rise buildings in Wakad.",
     coordinates: [18.5987, 73.7493],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "children-safety-nets", "duct-area-safety-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "children-safety-nets", "monkey-safety-nets"],
     highlights: [
       "Over 600+ apartments secured across Wakad",
       "Dedicated installation team for PCMC area",
@@ -101,7 +101,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Industrial & Balcony Safety Net Experts in Hinjewadi",
     description: "Hinjewadi is Pune's premier IT hub, hosting thousands of tech professionals. From IT parks to PG accommodations and high-density apartments, there is a high demand for reliable bird control, balcony safety, and sports nets. Allind Safety provides customized net installations for both residential and commercial complexes in Hinjewadi.",
     coordinates: [18.5913, 73.7386],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "sports-nets", "industrial-safety-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "bird-spikes", "monkey-safety-nets"],
     highlights: [
       "Providing industrial safety nets for IT parks and warehouses in Hinjewadi Phase 1, 2, and 3",
       "Highly durable, flame-retardant net options",
@@ -127,7 +127,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Premium Safety Nets in Hadapsar, Magarpatta & Amanora",
     description: "Hadapsar is characterized by major integrated townships like Magarpatta City and Amanora Park Town. These ultra-high-rise residential towers require high-performance, high-tension safety nets that conform to township rules. Allind Safety is the trusted partner for premium invisible grills and bird protection nets in Hadapsar.",
     coordinates: [18.5089, 73.9259],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "invisible-grills", "cricket-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "invisible-grills", "bird-spikes"],
     highlights: [
       "Approved installer for high-rise societies in Magarpatta & Amanora",
       "Clean, drilling-free installation methods where requested",
@@ -153,7 +153,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Top Balcony Safety Nets & Invisible Grills in Kharadi",
     description: "Kharadi has experienced rapid high-rise growth, making residential balcony safety and pigeon control critical. Allind Safety offers customized solutions for balconies, open terraces, window ducts, and galleries in Kharadi, using premium-grade materials designed for long-term outdoor exposure.",
     coordinates: [18.5442, 73.9389],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "invisible-grills", "duct-area-safety-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "invisible-grills", "children-safety-nets"],
     highlights: [
       "Over 400+ homes secured in Kharadi IT corridor",
       "Weather-resistant fixtures that prevent rust during heavy monsoons",
@@ -205,7 +205,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Luxury Safety Netting & Invisible Grills in Koregaon Park",
     description: "Known for its green lanes, bungalows, and high-end apartments, Koregaon Park residents place a high premium on visual aesthetics. Allind Safety specializes in installing premium invisible grills and ultra-fine, translucent balcony nets in Koregaon Park, maintaining the beauty of properties while providing absolute safety.",
     coordinates: [18.5362, 73.8940],
-    popularServices: ["invisible-grills", "balcony-safety-nets", "bird-protection-nets", "bird-spikes"],
+    popularServices: ["invisible-grills", "balcony-safety-nets", "pigeon-safety-nets", "bird-spikes"],
     highlights: [
       "Premium aesthetic setups matching high-end residential interiors",
       "Sleek and highly durable invisible grills that look incredibly premium",
@@ -231,7 +231,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Expert Safety Net Installations in Aundh, Pune",
     description: "Aundh is a developed residential suburb with a large density of apartment buildings. Protecting families, children, and household pets is top-of-mind for residents here. Allind Safety provides top-quality child safety nets, pigeon safety nets, and window nets across Aundh to ensure peace of mind.",
     coordinates: [18.5580, 73.8075],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "children-safety-nets", "cricket-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "children-safety-nets", "bird-spikes"],
     highlights: [
       "Reliable and trusted team with 7+ years service in Aundh",
       "Using branded materials (Garware & premium copolymer nylon)",
@@ -257,7 +257,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Professional Pigeon & Balcony Nets in Pimple Saudagar",
     description: "Pimple Saudagar is a highly organized residential locality with large gated communities. Pigeon infestations on balconies and plumbing ducts are a recurring issue. We deliver custom-fitted, highly durable pigeon safety nets and balcony nets in Pimple Saudagar, keeping homes secure, clean, and hygienic.",
     coordinates: [18.5986, 73.8005],
-    popularServices: ["pigeon-safety-nets", "balcony-safety-nets", "invisible-grills", "duct-area-safety-nets"],
+    popularServices: ["pigeon-safety-nets", "balcony-safety-nets", "invisible-grills", "monkey-safety-nets"],
     highlights: [
       "Over 500+ successful installations in premium societies of Pimple Saudagar",
       "Clean installation that prevents damage to building exteriors",
@@ -283,7 +283,7 @@ export const locationsData: LocationDetail[] = [
     tagline: "Affordable & Durable Safety Netting in Wagholi, Pune",
     description: "Wagholi is a rapidly expanding suburb on the Nagar Highway with numerous high-rise developments. Due to open spaces, wind and bird problems are common. Allind Safety provides budget-friendly yet highly durable safety nets, sports nets, and invisible grills in Wagholi, ensuring that safety is accessible to every household.",
     coordinates: [18.5793, 73.9822],
-    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "sports-nets", "construction-safety-nets"],
+    popularServices: ["balcony-safety-nets", "pigeon-safety-nets", "bird-spikes", "children-safety-nets"],
     highlights: [
       "Specialized teams serving the eastern corridor (Wagholi, Lonikand)",
       "High wind-resistant netting structures",

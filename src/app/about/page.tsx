@@ -16,13 +16,6 @@ export default function AboutPage() {
     { title: "Safety Audited Crews", desc: "Every installer passes regular high-altitude safety training and audits." },
   ];
 
-  const team = [
-    { name: "Vikram Singhania", role: "Managing Director", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop" },
-    { name: "Anand Kulkarni", role: "Head of Operations", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" },
-    { name: "Meera Nair", role: "Quality Assurance Lead", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" },
-    { name: "Sanjay Shinde", role: "Senior Site Engineer", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop" },
-  ];
-
   return (
     <div className="py-16 md:py-24 bg-grid-pattern min-h-screen">
       {/* Background radial glows */}
@@ -90,7 +83,7 @@ export default function AboutPage() {
         </div>
 
         {/* Certifications Section */}
-        <div className="mb-24">
+        <div>
           <SectionHeader
             title="Certifications & Safety Audits"
             subtitle="We hold ourselves to strict standards. All nets and accessories pass tensile structural checks before deployment."
@@ -106,30 +99,6 @@ export default function AboutPage() {
                   </div>
                 </div>
               </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Leadership Team */}
-        <div>
-          <SectionHeader
-            title="Our Leadership Team"
-            subtitle="Guided by industry veterans committed to quality craftsmanship and transparent services."
-          />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-slate-200 group-hover:border-primary transition-all duration-300 shadow-lg mb-4 bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h4 className="font-heading font-bold text-slate-900 text-base sm:text-lg mb-1">{member.name}</h4>
-                <p className="text-slate-600 font-sans text-xs sm:text-sm">{member.role}</p>
-              </div>
             ))}
           </div>
         </div>

@@ -3,28 +3,22 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
-import { Button } from "../ui/Button";
 import { servicesData } from "@/data/services";
 
 export const ServicesSection = () => {
-  const [showAll, setShowAll] = React.useState(false);
-
-  // Take first 5 services or all 12 depending on state
-  const displayServices = showAll ? servicesData : servicesData.slice(0, 5);
-
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.08,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
@@ -36,68 +30,40 @@ export const ServicesSection = () => {
     },
   };
 
-  // Bento grid configurations for 12 items.
-  // We configure layout mapping for each item index (desktop 3-column, tablet 2-column, and mobile 1-column).
+  // Bento grid layout for exactly 6 services:
+  // Row 1: [2-col wide] [1-col]
+  // Row 2: [1-col] [2-col wide]
+  // This creates a visually balanced asymmetric bento layout.
   const bentoLayouts = [
     {
-      // Index 0: Balcony Safety Nets (1 col)
-      span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 1: Pigeon Safety Nets (1 col)
-      span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 2: Invisible Grills (1 col)
-      span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 3: Children Safety Nets (2 cols on desktop/tablet)
+      // Index 0: Balcony Safety Nets — hero card, 2 cols wide
       span: "lg:col-span-2 md:col-span-2 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      height: "h-[340px] sm:h-[370px] lg:h-[420px]",
     },
     {
-      // Index 4: Monkey Safety Nets (1 col)
+      // Index 1: Pigeon Safety Nets — 1 col
       span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      height: "h-[340px] sm:h-[370px] lg:h-[420px]",
     },
     {
-      // Index 5: Construction Safety Nets (1 col)
+      // Index 2: Invisible Grills — 1 col
       span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      height: "h-[340px] sm:h-[370px] lg:h-[420px]",
     },
     {
-      // Index 6: Sports Nets (2 cols on desktop/tablet)
+      // Index 3: Children Safety Nets — 2 cols wide
       span: "lg:col-span-2 md:col-span-2 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      height: "h-[340px] sm:h-[370px] lg:h-[420px]",
     },
     {
-      // Index 7: Bird Spikes (3 cols on desktop, 2 cols on tablet)
-      span: "lg:col-span-3 md:col-span-2 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      // Index 4: Monkey Safety Nets — full 3 cols wide, shorter height
+      span: "lg:col-span-2 md:col-span-1 col-span-1",
+      height: "h-[340px] sm:h-[370px] lg:h-[400px]",
     },
     {
-      // Index 8: Bird Protection Nets (1 col)
+      // Index 5: Bird Spikes — 1 col
       span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 9: Cricket Nets (1 col)
-      span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 10: Duct Area Safety Nets (1 col)
-      span: "lg:col-span-1 md:col-span-1 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
-    },
-    {
-      // Index 11: Industrial Safety Nets (3 cols on desktop, 2 cols on tablet)
-      span: "lg:col-span-3 md:col-span-2 col-span-1",
-      height: "h-[320px] sm:h-[350px] lg:h-[380px]",
+      height: "h-[340px] sm:h-[370px] lg:h-[400px]",
     },
   ];
 
@@ -117,17 +83,16 @@ export const ServicesSection = () => {
 
         {/* Bento Grid layout */}
         <motion.div
-          key={showAll ? "all" : "short"}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
         >
-          {displayServices.map((service, idx) => {
+          {servicesData.map((service, idx) => {
             const layout = bentoLayouts[idx] || {
               span: "col-span-1",
-              height: "h-[320px] lg:h-[380px]",
+              height: "h-[340px] lg:h-[420px]",
             };
 
             return (
@@ -162,11 +127,11 @@ export const ServicesSection = () => {
                 <div className="relative w-full mt-4 flex-grow flex items-end justify-center px-6 overflow-hidden">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="relative w-full h-full min-h-[160px] sm:min-h-[190px] lg:min-h-[200px] rounded-t-xl border-t border-x border-slate-100 bg-slate-50 overflow-hidden shadow-[0_-4px_20px_rgba(0,0,0,0.03)] transition-transform duration-500 ease-out group-hover:-translate-y-1 block"
+                    className="relative w-full h-full min-h-[160px] sm:min-h-[200px] lg:min-h-[220px] rounded-t-xl border-t border-x border-slate-100 bg-slate-50 overflow-hidden shadow-[0_-4px_20px_rgba(0,0,0,0.03)] transition-transform duration-500 ease-out group-hover:-translate-y-1 block"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={service.beforeAfterImage.after}
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
                     />
@@ -178,20 +143,6 @@ export const ServicesSection = () => {
             );
           })}
         </motion.div>
-
-        {/* Toggle Show More/Less Button */}
-        <div className="flex justify-center items-center mb-10">
-          <Button
-            onClick={() => setShowAll(!showAll)}
-            variant="secondary"
-            rightIcon={showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-            className="min-w-[160px]"
-          >
-            {showAll ? "Show Less" : "Show More"}
-          </Button>
-        </div>
-
-        {/* View All CTA */}
       </div>
     </section>
   );
