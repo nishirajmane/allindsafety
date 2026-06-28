@@ -37,7 +37,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Protect your family and pets from accidental falls without blocking your view or ventilation.",
     fullDescription: "Our premium balcony safety nets are engineered to provide an invisible but incredibly strong shield for your balconies. Fabricated from 100% copolymer nylon and UV-stabilized materials, they are built to withstand high tension and extreme weather conditions. These nets are essential for high-rise apartments to protect young children, playful pets, and elderly family members from accidental slips.",
     iconName: "Shield",
-    image: "/services/balcony-safety-nets.png",
+    image: "/services/balcony-safety-nets.jpg",
     features: [
       "High-tension capacity (up to 150kg per knot)",
       "UV resistant - will not degrade or fade in direct sun",
@@ -52,8 +52,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "120 - 150 kg Breakage Load"
     },
     beforeAfterImage: {
-      before: "/services/balcony-safety-nets.png",
-      after: "/services/balcony-safety-nets.png"
+      before: "/services/balcony-safety-nets.jpg",
+      after: "/services/balcony-safety-nets.jpg"
     }
   },
   {
@@ -63,7 +63,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Keep balconies hygienic and clean. Prevent pigeon roosting, nesting, and droppings permanently.",
     fullDescription: "Pigeons are major carriers of pathogens and their droppings cause corrosive damage. Our specialized pigeon safety nets provide a permanent, non-lethal solution to keep pigeons out of balconies, utility shafts, and duct areas. Made with fine mesh sizes, they block birds of all sizes while letting in 100% light and ventilation.",
     iconName: "Bird",
-    image: "/services/pigeon-safety-nets.png",
+    image: "/services/pigeon-safety-nets.jpg",
     features: [
       "100% bird-exclusion efficiency",
       "Humane, non-lethal, eco-friendly solution",
@@ -78,8 +78,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "95 kg Breakage Load"
     },
     beforeAfterImage: {
-      before: "/services/pigeon-safety-nets.png",
-      after: "/services/pigeon-safety-nets.png"
+      before: "/services/pigeon-safety-nets.jpg",
+      after: "/services/pigeon-safety-nets.jpg"
     }
   },
   {
@@ -89,7 +89,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Modern substitute to heavy iron grills. Seamless views combined with ultra-high-grade stainless steel safety.",
     fullDescription: "Upgrade your balcony safety with invisible grills - the modern alternative to traditional bulky iron bars. Composed of 316 marine-grade stainless steel cables wrapped in a nano-nylon membrane, our invisible grills provide robust security against intrusion and falls without compromising building aesthetics, view, or emergency escape paths.",
     iconName: "EyeOff",
-    image: "/services/invisible-grills.png",
+    image: "/services/invisible-grills.jpg",
     features: [
       "Ultra-thin 316 Marine Grade Stainless Steel (SS) cables",
       "Supports integration with home security/alarm systems",
@@ -104,8 +104,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "Up to 400 kg Tensile Strength"
     },
     beforeAfterImage: {
-      before: "/services/invisible-grills.png",
-      after: "/services/invisible-grills.png"
+      before: "/services/invisible-grills.jpg",
+      after: "/services/invisible-grills.jpg"
     }
   },
   {
@@ -115,7 +115,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Specialized double-anchored heavy-duty nets to protect active kids in windows and balconies.",
     fullDescription: "Kids are naturally curious and love exploring high places. Our children safety nets are designed with an extra layer of structural reinforcement and double-anchored wall joints. With a narrower mesh configuration and high-density impact absorption, these nets provide total peace of mind for parents living in high-rise buildings.",
     iconName: "Smile",
-    image: "/services/children-safety-net.png",
+    image: "/services/children-safety-net.jpg",
     features: [
       "Ultra-dense mesh grid to prevent small limbs or toys from slipping",
       "Double anchor points for maximum structural load distribution",
@@ -130,8 +130,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "160 kg Tensile Capacity"
     },
     beforeAfterImage: {
-      before: "/services/children-safety-net.png",
-      after: "/services/children-safety-net.png"
+      before: "/services/children-safety-net.jpg",
+      after: "/services/children-safety-net.jpg"
     }
   },
   {
@@ -141,7 +141,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Extremely heavy-gauge mesh barriers to deter monkeys and wild pests from entering balconies.",
     fullDescription: "In areas with frequent monkey activity, standard nets can easily get torn or damaged. Our monkey safety nets are built with thick-gauge, reinforced copolymer wire mesh that is highly bite-resistant and claw-resistant. These nets prevent monkeys from entering balconies, damaging crops/plants, and causing safety concerns, without causing harm to the animals.",
     iconName: "Activity",
-    image: "/services/monkey-safety-nets.png",
+    image: "/services/monkey-safety-nets.jpg",
     features: [
       "Super heavy-duty 2.5mm+ wire diameter",
       "Anti-bite and claw resistant design",
@@ -156,8 +156,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "250 kg Bite & Pull resistance"
     },
     beforeAfterImage: {
-      before: "/services/monkey-safety-nets.png",
-      after: "/services/monkey-safety-nets.png"
+      before: "/services/monkey-safety-nets.jpg",
+      after: "/services/monkey-safety-nets.jpg"
     }
   },
   {
@@ -167,7 +167,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: "Polycarbonate and stainless steel spikes that block birds from sitting on parapets, AC units, and pipes.",
     fullDescription: "For narrow ledges, pipes, air conditioning outdoor units, and signage boards, nets might not be practical. Our premium bird spikes provide a humane, mechanical barrier. They prevent pigeons, crows, and other birds from landing, nesting, or perching on horizontal architectural elements, without causing physical injury.",
     iconName: "Zap",
-    image: "/services/bird-spikes.png",
+    image: "/services/bird-spikes.jpg",
     features: [
       "SS-316 high-grade spikes set on UV polycarbonate base",
       "Virtually invisible from ground level",
@@ -182,8 +182,8 @@ export const servicesData: ServiceDetail[] = [
       strength: "Mechanical Landing Barrier"
     },
     beforeAfterImage: {
-      before: "/services/bird-spikes.png",
-      after: "/services/bird-spikes.png"
+      before: "/services/bird-spikes.jpg",
+      after: "/services/bird-spikes.jpg"
     }
   }
 ];

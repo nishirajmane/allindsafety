@@ -117,22 +117,14 @@ export const TestimonialCarousel = () => {
                 </p>
               </div>
 
-              {/* User Avatar & Info */}
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={testimonials[activeIndex].avatar}
-                  alt={testimonials[activeIndex].name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <span className="block text-slate-900 font-heading font-bold text-base leading-none">
-                    {testimonials[activeIndex].name}
-                  </span>
-                  <span className="text-slate-500 text-xs font-sans mt-1.5 block">
-                    Verified Customer, {testimonials[activeIndex].city}
-                  </span>
-                </div>
+              {/* User Info */}
+              <div className="pt-6 border-t border-slate-100">
+                <span className="block text-slate-900 font-heading font-bold text-base leading-none">
+                  {testimonials[activeIndex].name}
+                </span>
+                <span className="text-slate-500 text-xs font-sans mt-1.5 block">
+                  Verified Customer, {testimonials[activeIndex].city}
+                </span>
               </div>
             </Card>
           </div>

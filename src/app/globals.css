@@ -134,3 +134,25 @@ nav {
               padding 0.3s !important;
 }
 
+/* Lenis Smooth Scroll Styles */
+html.lenis,
+html.lenis-complex {
+  height: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+

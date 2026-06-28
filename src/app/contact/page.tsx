@@ -133,7 +133,7 @@ export default function ContactPage() {
                 Fill in your details below and a regional site inspector will contact you directly to schedule a survey.
               </p>
             </div>
-            <LeadForm />
+            <LeadForm minimal={true} />
           </div>
 
         </div>
