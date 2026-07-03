@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Users, Award, Zap } from "lucide-react";
 import { servicesData } from "@/data/services";
@@ -12,6 +12,23 @@ export const HeroSection = () => {
   const [selectedService, setSelectedService] = useState("");
   const [selectedCity, setSelectedCity] = useState("Pune");
   const [step, setStep] = useState<"input" | "saved">("input");
+
+  const heroImages = [
+    { src: "/hero-image.jpg", alt: "Premium modern balcony and invisible grill safety installation" },
+    ...servicesData.map((service) => ({
+      src: service.image,
+      alt: service.title,
+    })),
+  ];
+
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % heroImages.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
 
   const contentVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -27,7 +44,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-br from-slate-50 via-white to-teal-50/20 overflow-hidden">
+    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-br from-slate-100 via-teal-50/80 to-teal-100/40 overflow-hidden">
       {/* Grid Pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
 
@@ -217,22 +234,34 @@ export const HeroSection = () => {
         </div>
 
         {/* Large Wide Bottom Image Container (Preserving aspect slot to avoid layout shifts) */}
-        <div className="w-full aspect-[16/9] md:aspect-[21/9] relative">
-          <div
-            className="absolute inset-0 overflow-hidden rounded-2xl md:rounded-[32px] border border-slate-100 shadow-xl group bg-slate-50 z-0"
-          >
-            {/* 
-              EDIT IMAGE HERE:
-              Change the src path below to your custom image (e.g. /images/your-hero-image.jpg)
-            */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/hero-image.jpg"
-              alt="Premium modern balcony and invisible grill safety installation"
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
+        <div className="w-full aspect-[16/9] md:aspect-[21/9] relative overflow-hidden rounded-2xl md:rounded-[32px] border border-slate-100 shadow-xl bg-slate-50 z-0">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImg}
+              src={heroImages[currentImg].src}
+              alt={heroImages[currentImg].alt}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            {/* Subtle gradient overlay to ground the image */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+          </AnimatePresence>
+          {/* Subtle gradient overlay to ground the image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+
+          {/* Navigation dots overlay */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {heroImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentImg(idx)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentImg === idx ? "bg-white w-5" : "bg-white/50 hover:bg-white/80"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
         </div>
 

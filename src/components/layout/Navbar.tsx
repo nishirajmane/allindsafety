@@ -86,17 +86,17 @@ export const Navbar = () => {
                 src="/logo.png"
                 alt="Allind Safety Logo"
                 className={`w-auto object-contain group-hover:scale-103 transition-all duration-300 ${
-                  isScrolled ? "h-14 xs:h-16 md:h-[70px]" : "h-16 xs:h-20 md:h-[80px]"
+                  isScrolled ? "h-16 xs:h-[76px] md:h-[85px]" : "h-20 xs:h-[88px] md:h-[100px]"
                 }`}
               />
               <div className="flex flex-col">
                 <span className={`font-heading font-extrabold text-slate-900 tracking-tight leading-none transition-all duration-300 ${
-                  isScrolled ? "text-xl xs:text-2xl md:text-3xl" : "text-2xl xs:text-3xl md:text-4xl"
+                  isScrolled ? "text-2xl xs:text-3xl md:text-4xl" : "text-3xl xs:text-4xl md:text-5xl"
                 }`}>
                   ALLIND
                 </span>
                 <span className={`text-primary font-heading font-bold tracking-widest uppercase mt-1 transition-all duration-300 ${
-                  isScrolled ? "text-[10px] xs:text-xs md:text-sm" : "text-xs xs:text-sm md:text-base"
+                  isScrolled ? "text-xs xs:text-sm md:text-base" : "text-sm xs:text-base md:text-lg"
                 }`}>
                   Safety
                 </span>
@@ -215,13 +215,13 @@ export const Navbar = () => {
             <img
               src="/logo.png"
               alt="Allind Safety Logo"
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-2xl text-slate-900 tracking-tight leading-none">
+              <span className="font-heading font-extrabold text-3xl text-slate-900 tracking-tight leading-none">
                 ALLIND
               </span>
-              <span className="text-xs text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
+              <span className="text-sm text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
                 Safety
               </span>
             </div>
