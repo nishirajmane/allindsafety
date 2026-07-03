@@ -43,12 +43,39 @@ export const Navbar = () => {
   // We show top 8 services in dropdown
   const dropdownServices = servicesData.slice(0, 8);
 
+  const marqueeItems = [
+    "10+ Years Experience",
+    "5000+ Happy Customers",
+    "Free Inspection & Same Day Installation",
+    "100% Quality Material",
+    "Expert Installers in Pune",
+    "5-Year Warranty on Safety Nets",
+  ];
+
   return (
     <>
+      {/* Infinite Scrolling Marquee Banner */}
+      <div className="absolute top-0 left-0 w-full h-[44px] bg-secondary text-white overflow-hidden z-50 flex items-center text-sm font-bold tracking-wide font-sans border-b border-teal-400/20 shadow-sm">
+        <div className="flex whitespace-nowrap animate-marquee py-2 items-center">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="flex items-center gap-8 md:gap-12 px-4 md:px-6">
+              <span className="text-teal-950 font-extrabold uppercase tracking-wider text-[10px] bg-teal-50 px-2 py-0.5 rounded-xs select-none">Highlights</span>
+              {marqueeItems.map((item, idx) => (
+                <React.Fragment key={idx}>
+                  <span className="shrink-0">{item}</span>
+                  {idx < marqueeItems.length - 1 && <span className="text-teal-200/50 shrink-0">•</span>}
+                </React.Fragment>
+              ))}
+              <span className="text-teal-200/50 shrink-0">|</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-4 shadow-lg shadow-slate-100/50"
-            : "bg-transparent py-6"
+        className={`fixed left-0 w-full z-50 transition-all duration-300 ${isScrolled
+            ? "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-3 shadow-lg shadow-slate-100/50 top-0"
+            : "bg-transparent py-4 top-[44px]"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,13 +85,19 @@ export const Navbar = () => {
               <img
                 src="/logo.png"
                 alt="Allind Safety Logo"
-                className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className={`w-auto object-contain group-hover:scale-103 transition-all duration-300 ${
+                  isScrolled ? "h-14 xs:h-16 md:h-[70px]" : "h-16 xs:h-20 md:h-[80px]"
+                }`}
               />
               <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xl md:text-2xl text-slate-900 tracking-tight leading-none">
+                <span className={`font-heading font-extrabold text-slate-900 tracking-tight leading-none transition-all duration-300 ${
+                  isScrolled ? "text-xl xs:text-2xl md:text-3xl" : "text-2xl xs:text-3xl md:text-4xl"
+                }`}>
                   ALLIND
                 </span>
-                <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
+                <span className={`text-primary font-heading font-bold tracking-widest uppercase mt-1 transition-all duration-300 ${
+                  isScrolled ? "text-[10px] xs:text-xs md:text-sm" : "text-xs xs:text-sm md:text-base"
+                }`}>
                   Safety
                 </span>
               </div>
@@ -182,9 +215,16 @@ export const Navbar = () => {
             <img
               src="/logo.png"
               alt="Allind Safety Logo"
-              className="h-11 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
-            <span className="font-heading font-extrabold text-lg text-slate-900">ALLIND</span>
+            <div className="flex flex-col">
+              <span className="font-heading font-extrabold text-2xl text-slate-900 tracking-tight leading-none">
+                ALLIND
+              </span>
+              <span className="text-xs text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
+                Safety
+              </span>
+            </div>
           </Link>
           <button
             onClick={() => setIsOpen(false)}

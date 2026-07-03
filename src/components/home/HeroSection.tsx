@@ -27,10 +27,13 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-20 pb-16 md:pt-24 md:pb-24 bg-white overflow-hidden">
+    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-br from-slate-50 via-white to-teal-50/20 overflow-hidden">
+      {/* Grid Pattern overlay */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
+
       {/* Decorative subtle background highlights */}
-      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[550px] bg-secondary/8 rounded-full blur-[140px] pointer-events-none animate-pulse-slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Layout Grid: Title on Left, Quote Widget on Right */}

@@ -71,7 +71,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <SmoothScroll>
           <Navbar />
-          <main className="flex-grow pt-20">{children}</main>
+          <main className="flex-grow pt-[155px] md:pt-[175px]">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>
