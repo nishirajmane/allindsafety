@@ -74,8 +74,8 @@ export const Navbar = () => {
 
       <nav
         className={`fixed left-0 w-full z-50 transition-all duration-300 ${isScrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-3 shadow-lg shadow-slate-100/50 top-0"
-            : "bg-transparent py-4 top-[44px]"
+            ? "bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60 py-3 shadow-lg top-0"
+            : "bg-[#0f172a]/95 border-b border-slate-900/30 py-4 top-[44px]"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,45 +90,45 @@ export const Navbar = () => {
                 }`}
               />
               <div className="flex flex-col">
-                <span className={`font-heading font-extrabold text-slate-900 tracking-tight leading-none transition-all duration-300 ${
+                <span className={`font-heading font-extrabold text-slate-100 tracking-tight leading-none transition-all duration-300 ${
                   isScrolled ? "text-2xl xs:text-3xl md:text-4xl" : "text-3xl xs:text-4xl md:text-5xl"
                 }`}>
                   ALLIND
                 </span>
-                <span className={`text-primary font-heading font-bold tracking-widest uppercase mt-1 transition-all duration-300 ${
+                <span className={`text-secondary font-heading font-bold tracking-widest uppercase mt-1 transition-all duration-300 ${
                   isScrolled ? "text-xs xs:text-sm md:text-base" : "text-sm xs:text-base md:text-lg"
                 }`}>
                   Safety
                 </span>
               </div>
             </Link>
-
+ 
             {/* Desktop Navigation Links */}
             <div className="hidden lg:flex items-center gap-8">
               <Link
                 href="/"
-                className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/" ? "text-primary" : "text-slate-600"
+                className={`font-sans text-sm font-semibold transition-colors hover:text-secondary ${pathname === "/" ? "text-secondary" : "text-slate-300"
                   }`}
               >
                 Home
               </Link>
-
+ 
               {/* Services Dropdown */}
               <div className="relative group">
                 <button
-                  className={`flex items-center gap-1 font-sans text-sm font-semibold transition-colors hover:text-primary cursor-pointer ${pathname.startsWith("/services") ? "text-primary" : "text-slate-600"
+                  className={`flex items-center gap-1 font-sans text-sm font-semibold transition-colors hover:text-secondary cursor-pointer ${pathname.startsWith("/services") ? "text-secondary" : "text-slate-300"
                     }`}
                 >
                   Services
-                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300 text-slate-400" />
                 </button>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-xl bg-white border border-slate-200/80 p-2 shadow-2xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-xl bg-slate-900/95 backdrop-blur-md border border-slate-800 p-2 shadow-2xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
                   <div className="grid grid-cols-1 gap-1">
                     {dropdownServices.map((service) => (
                       <Link
                         key={service.slug}
                         href={`/services/${service.slug}`}
-                        className="flex items-center px-4 py-2.5 rounded-lg text-sm text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                        className="flex items-center px-4 py-2.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
                       >
                         {service.title}
                       </Link>
@@ -136,48 +136,48 @@ export const Navbar = () => {
                   </div>
                 </div>
               </div>
-
+ 
               <Link
                 href="/about"
-                className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/about" ? "text-primary" : "text-slate-600"
+                className={`font-sans text-sm font-semibold transition-colors hover:text-secondary ${pathname === "/about" ? "text-secondary" : "text-slate-300"
                   }`}
               >
                 About Us
               </Link>
-
+ 
               <Link
                 href="/gallery"
-                className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/gallery" ? "text-primary" : "text-slate-600"
+                className={`font-sans text-sm font-semibold transition-colors hover:text-secondary ${pathname === "/gallery" ? "text-secondary" : "text-slate-300"
                   }`}
               >
                 Gallery
               </Link>
-
+ 
               <Link
                 href="/locations"
-                className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname.startsWith("/locations") ? "text-primary" : "text-slate-600"
+                className={`font-sans text-sm font-semibold transition-colors hover:text-secondary ${pathname.startsWith("/locations") ? "text-secondary" : "text-slate-300"
                   }`}
               >
                 Locations
               </Link>
-
+ 
               <Link
                 href="/contact"
-                className={`font-sans text-sm font-semibold transition-colors hover:text-primary ${pathname === "/contact" ? "text-primary" : "text-slate-600"
+                className={`font-sans text-sm font-semibold transition-colors hover:text-secondary ${pathname === "/contact" ? "text-secondary" : "text-slate-300"
                   }`}
               >
                 Contact
               </Link>
             </div>
-
+ 
             {/* Call-to-Actions (Desktop) */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 href="tel:+919797974476"
-                className="flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-sm font-semibold transition-colors"
+                className="flex items-center gap-2 text-slate-300 hover:text-secondary font-sans text-sm font-semibold transition-colors"
               >
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-slate-850 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-secondary" />
                 </div>
                 <span>+91 97979 74476</span>
               </Link>
@@ -185,29 +185,29 @@ export const Navbar = () => {
                 Free Inspection
               </Button>
             </div>
-
+ 
             {/* Hamburger Menu Icon (Mobile) */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-100 focus:outline-none"
+              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-secondary hover:bg-slate-850 focus:outline-none"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </nav>
-
+ 
       {/* Backdrop Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-300"
+          className="lg:hidden fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-xs transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
-
+ 
       {/* Mobile Drawer Navigation */}
       <div
-        className={`lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white border-l border-slate-200 p-6 shadow-2xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-slate-950 border-l border-slate-850 p-6 shadow-2xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex justify-between items-center mb-8">
@@ -218,37 +218,37 @@ export const Navbar = () => {
               className="h-20 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-3xl text-slate-900 tracking-tight leading-none">
+              <span className="font-heading font-extrabold text-3xl text-slate-100 tracking-tight leading-none">
                 ALLIND
               </span>
-              <span className="text-sm text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
+              <span className="text-sm text-secondary font-heading font-bold tracking-widest uppercase mt-0.5">
                 Safety
               </span>
             </div>
           </Link>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-100 focus:outline-none"
+            className="p-2 rounded-lg text-slate-300 hover:text-secondary hover:bg-slate-850 focus:outline-none"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
-
+ 
         <div className="flex flex-col gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className={`font-sans text-lg font-semibold transition-colors hover:text-primary ${pathname === link.href ? "text-primary" : "text-slate-700"
+              className={`font-sans text-lg font-semibold transition-colors hover:text-secondary ${pathname === link.href ? "text-secondary" : "text-slate-300"
                 }`}
             >
               {link.name}
             </Link>
           ))}
-
+ 
           {/* Services in mobile dropdown list */}
-          <div className="border-t border-slate-100 pt-4 mt-2">
-            <span className="text-xs uppercase text-slate-400 font-bold font-heading tracking-widest mb-3 block">
+          <div className="border-t border-slate-850 pt-4 mt-2">
+            <span className="text-xs uppercase text-slate-500 font-bold font-heading tracking-widest mb-3 block">
               Our Services
             </span>
             <div className="grid grid-cols-1 gap-3 max-h-60 overflow-y-auto pr-2">
@@ -256,26 +256,26 @@ export const Navbar = () => {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="font-sans text-sm text-slate-500 hover:text-primary transition-colors"
+                  className="font-sans text-sm text-slate-400 hover:text-secondary transition-colors"
                 >
                   {service.title}
                 </Link>
               ))}
             </div>
           </div>
-
+ 
           {/* Mobile Buttons */}
-          <div className="border-t border-slate-100 pt-6 flex flex-col gap-4 mt-auto">
+          <div className="border-t border-slate-850 pt-6 flex flex-col gap-4 mt-auto">
             <Link
               href="tel:+919797974476"
-              className="flex items-center gap-3 text-slate-700 hover:text-primary font-sans text-base font-semibold py-2"
+              className="flex items-center gap-3 text-slate-300 hover:text-secondary font-sans text-base font-semibold py-2"
             >
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-                <Phone className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 rounded-full bg-slate-850 flex items-center justify-center">
+                <Phone className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <span className="block text-xs text-slate-400 font-bold leading-none">Call Now</span>
-                <span className="text-sm mt-1 block">+91 97979 74476</span>
+                <span className="block text-xs text-slate-500 font-bold leading-none">Call Now</span>
+                <span className="text-sm mt-1 block text-slate-300">+91 97979 74476</span>
               </div>
             </Link>
             <Button href="/contact" size="md" variant="primary" className="w-full">

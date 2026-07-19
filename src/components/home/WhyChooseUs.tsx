@@ -98,9 +98,9 @@ export const WhyChooseUs = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-slate-100/30 border-y border-slate-200/60 bg-grid-pattern">
+    <section className="py-24 relative overflow-hidden bg-gradient-mesh-primary border-y border-slate-200/60 bg-grid-pattern">
       {/* Glow Backdrops */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[300px] bg-gradient-to-br from-primary/10 to-teal-500/5 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
@@ -124,19 +124,19 @@ export const WhyChooseUs = () => {
               <motion.div key={idx} variants={itemVariants}>
                 <Card
                   glowEffect={true}
-                  className="flex flex-col gap-4 p-6 h-full hover:bg-white hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 bg-white shadow-sm"
+                  className="flex flex-col gap-4 p-6 h-full hover:bg-slate-900/90 hover:-translate-y-1 transition-all duration-300 border border-slate-800 bg-slate-950/80 shadow-xl"
                 >
                   {/* Icon */}
-                  <div className={`w-10 h-10 rounded-lg ${feature.bg} flex items-center justify-center ${feature.color} border border-slate-200/50`}>
+                  <div className={`w-10 h-10 rounded-lg ${feature.bg} flex items-center justify-center ${feature.color} border border-slate-800`}>
                     <Icon className="w-5 h-5" />
                   </div>
-
+ 
                   {/* Title & Desc */}
                   <div>
-                    <h3 className="font-heading font-bold text-base text-slate-900 mb-2">
+                    <h3 className="font-heading font-bold text-base text-slate-100 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-slate-600 font-sans text-xs sm:text-sm leading-relaxed">
+                    <p className="text-slate-350 font-sans text-xs sm:text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

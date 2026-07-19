@@ -236,9 +236,9 @@ export const LeadForm: React.FC<LeadFormProps> = ({ minimal = false }) => {
   }
 
   return (
-    <section id="quote-form" className="py-24 relative overflow-hidden bg-slate-100/10">
+    <section id="quote-form" className="py-24 relative overflow-hidden bg-gradient-mesh-primary border-t border-slate-200/60">
       {/* Glow Backdrops */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-secondary/10 via-primary/5 to-amber-500/5 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

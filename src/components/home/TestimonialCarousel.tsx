@@ -79,9 +79,9 @@ export const TestimonialCarousel = () => {
   }, [activeIndex, autoplay]);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-slate-100/30 border-y border-slate-200/50">
+    <section className="py-24 relative overflow-hidden bg-gradient-mesh-primary border-y border-slate-200/50">
       {/* Background glow overlay */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-secondary/10 via-primary/5 to-amber-500/5 rounded-full blur-3xl pointer-events-none animate-float" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}

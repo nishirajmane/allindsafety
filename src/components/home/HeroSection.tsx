@@ -44,13 +44,13 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-br from-slate-100 via-teal-50/80 to-teal-100/40 overflow-hidden">
+    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-mesh-primary overflow-hidden">
       {/* Grid Pattern overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
-      {/* Decorative subtle background highlights */}
-      <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[550px] bg-secondary/8 rounded-full blur-[140px] pointer-events-none animate-pulse-slow" />
+      {/* Decorative flashy gradient background highlights */}
+      <div className="absolute top-1/10 left-1/10 w-[500px] h-[500px] bg-gradient-to-br from-teal-400/20 to-emerald-400/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed mix-blend-multiply" />
+      <div className="absolute bottom-1/10 right-1/10 w-[600px] h-[600px] bg-gradient-to-tr from-amber-400/15 to-rose-400/15 rounded-full blur-[140px] pointer-events-none animate-float mix-blend-multiply" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Layout Grid: Title on Left, Quote Widget on Right */}
@@ -65,7 +65,9 @@ export const HeroSection = () => {
               className="text-[44px] sm:text-[68px] md:text-[84px] lg:text-[88px] xl:text-[98px] font-black font-heading text-slate-950 leading-[0.9] tracking-tighter"
             >
               Find Your <br />
-              Perfect Grill
+              <span className="bg-gradient-to-r from-teal-700 via-teal-500 to-amber-500 bg-clip-text text-transparent pr-2">
+                Perfect Grill
+              </span>
             </motion.h1>
             <motion.p
               variants={contentVariants}
@@ -96,16 +98,16 @@ export const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="border border-slate-200 rounded-2xl bg-white shadow-lg p-5 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary transition-all flex flex-col gap-4 relative overflow-hidden"
+                    className="border border-slate-800/80 rounded-2xl bg-slate-950/90 backdrop-blur-md shadow-xl p-5 focus-within:ring-2 focus-within:ring-secondary/20 focus-within:border-secondary transition-all flex flex-col gap-4 relative overflow-hidden text-left"
                   >
                     {/* Decorative accent glow */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-full blur-xl pointer-events-none animate-pulse-slow" />
 
                     <div>
-                      <span className="text-[10px] font-bold text-primary tracking-widest uppercase mb-1 block font-sans">
+                      <span className="text-[10px] font-bold text-secondary tracking-widest uppercase mb-1 block font-sans">
                         Get instant quotation
                       </span>
-                      <h3 className="font-sans font-extrabold text-slate-900 text-lg leading-tight">
+                      <h3 className="font-sans font-extrabold text-slate-100 text-lg leading-tight">
                         Describe your requirement
                       </h3>
                     </div>
@@ -115,7 +117,7 @@ export const HeroSection = () => {
                         value={quoteText}
                         onChange={(e) => setQuoteText(e.target.value)}
                         placeholder="Type your quote request (e.g. Invisible grill for balcony, 10x8ft)..."
-                        className="w-full min-h-[90px] p-3 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary bg-slate-50/50 focus:bg-white font-sans text-sm leading-relaxed transition-all resize-none"
+                        className="w-full min-h-[90px] p-3 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-secondary bg-slate-900/60 focus:bg-slate-900 font-sans text-sm leading-relaxed transition-all resize-none"
                       />
                     </div>
 
@@ -138,29 +140,29 @@ export const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="border border-slate-200 rounded-2xl bg-white shadow-lg p-5 flex flex-col gap-4 relative text-left"
+                    className="border border-slate-800/80 rounded-2xl bg-slate-950/90 backdrop-blur-md shadow-xl p-5 flex flex-col gap-4 relative text-left"
                   >
                     {/* Decorative green accent glow */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none animate-pulse-slow" />
 
                     {/* Header */}
-                    <div className="flex items-center justify-between border-b border-slate-100 pb-3 font-sans">
+                    <div className="flex items-center justify-between border-b border-slate-800 pb-3 font-sans">
                       <div className="flex items-center">
-                        <span className="text-xs font-bold text-emerald-600">
+                        <span className="text-xs font-bold text-emerald-400">
                           Quote requirement saved!
                         </span>
                       </div>
                       <button
                         onClick={() => setStep("input")}
-                        className="text-[11px] font-bold text-slate-500 hover:text-primary transition-colors cursor-pointer"
+                        className="text-[11px] font-bold text-slate-400 hover:text-secondary transition-colors cursor-pointer"
                       >
                         Edit Text
                       </button>
                     </div>
 
                     {/* Preview Box */}
-                    <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 relative">
-                      <p className="text-xs text-slate-600 italic font-sans leading-relaxed break-words">
+                    <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-3 relative">
+                      <p className="text-xs text-slate-350 italic font-sans leading-relaxed break-words">
                         &ldquo;{quoteText}&rdquo;
                       </p>
                     </div>
@@ -201,7 +203,7 @@ export const HeroSection = () => {
                     </div>
 
                     {/* Submit Actions */}
-                    <div className="flex flex-col gap-2 pt-2 border-t border-slate-100 font-sans">
+                    <div className="flex flex-col gap-2 pt-2 border-t border-slate-800 font-sans">
                       <a
                         href={`https://wa.me/919199199976?text=${encodeURIComponent(
                           `Hi All India Safety! I'd like to request a quote.\n\n*Requirement details:*\n"${quoteText}"\n\n${selectedService ? `*Service:* ${selectedService}\n` : ""
@@ -221,7 +223,7 @@ export const HeroSection = () => {
                           setSelectedService("");
                           setSelectedCity("");
                         }}
-                        className="text-[11px] font-bold text-slate-400 hover:text-slate-600 transition-colors text-center py-1 cursor-pointer"
+                        className="text-[11px] font-bold text-slate-500 hover:text-slate-300 transition-colors text-center py-1 cursor-pointer"
                       >
                         Reset & Clear
                       </button>

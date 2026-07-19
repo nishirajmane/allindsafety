@@ -68,10 +68,10 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden bg-slate-50">
-      {/* Subtle backdrop highlight */}
-      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 relative overflow-hidden bg-gradient-mesh-primary border-t border-slate-200/50">
+      {/* Flashy backdrop highlight */}
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-primary/10 to-teal-500/5 rounded-full blur-3xl pointer-events-none animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-amber-400/5 to-secondary/10 rounded-full blur-3xl pointer-events-none animate-float-delayed" />
 
       <div className="w-full max-w-none px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Section Heading */}

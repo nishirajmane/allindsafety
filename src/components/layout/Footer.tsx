@@ -14,10 +14,10 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200/80 pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-gradient-mesh-dark text-slate-100 border-t border-slate-800/80 pt-20 pb-10 relative overflow-hidden">
       {/* Glow shapes */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/8 rounded-full blur-3xl pointer-events-none animate-float-delayed" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
@@ -30,15 +30,15 @@ export const Footer = () => {
                 className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
               <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xl text-slate-900 tracking-tight leading-none">
+                <span className="font-heading font-extrabold text-xl text-slate-100 tracking-tight leading-none">
                   ALLIND
                 </span>
-                <span className="text-[10px] text-primary font-heading font-bold tracking-widest uppercase mt-0.5">
+                <span className="text-[10px] text-secondary font-heading font-bold tracking-widest uppercase mt-0.5">
                   Safety
                 </span>
               </div>
             </Link>
-            <p className="text-slate-600 font-sans text-sm leading-relaxed">
+            <p className="text-slate-300 font-sans text-sm leading-relaxed">
               India&apos;s premier protective net installations. We secure balconies, windows, and sports grounds using high-tensile, UV-stabilized materials for absolute safety.
             </p>
             {/* Social Icons */}
@@ -79,7 +79,7 @@ export const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-white hover:bg-primary/10 border border-slate-200 hover:border-primary/30 flex items-center justify-center text-slate-500 hover:text-primary transition-all duration-300 shadow-sm"
+                    className="w-8 h-8 rounded-lg bg-slate-800/60 hover:bg-primary/20 border border-slate-700 hover:border-primary/40 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 shadow-sm"
                   >
                     <span className="sr-only">{social.name}</span>
                     <Icon className="w-4 h-4" />
@@ -91,7 +91,7 @@ export const Footer = () => {
 
           {/* Quick links to Services */}
           <div>
-            <h3 className="font-heading font-bold text-slate-800 text-sm tracking-wider uppercase mb-6">
+            <h3 className="font-heading font-bold text-slate-200 text-sm tracking-wider uppercase mb-6">
               Our Services
             </h3>
             <ul className="flex flex-col gap-3">
@@ -99,7 +99,7 @@ export const Footer = () => {
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="font-sans text-sm text-slate-600 hover:text-primary transition-colors"
+                    className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -110,27 +110,27 @@ export const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-heading font-bold text-slate-800 text-sm tracking-wider uppercase mb-6">
+            <h3 className="font-heading font-bold text-slate-200 text-sm tracking-wider uppercase mb-6">
               Company Info
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="/about" className="font-sans text-sm text-slate-600 hover:text-primary transition-colors">
+                <Link href="/about" className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors">
                   About Our Journey
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="font-sans text-sm text-slate-600 hover:text-primary transition-colors">
+                <Link href="/gallery" className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors">
                   Project Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="font-sans text-sm text-slate-600 hover:text-primary transition-colors">
+                <Link href="/contact" className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors">
                   Request a Quote
                 </Link>
               </li>
               <li>
-                <Link href="/contact#faq" className="font-sans text-sm text-slate-600 hover:text-primary transition-colors">
+                <Link href="/contact#faq" className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors">
                   Frequently Asked Questions
                 </Link>
               </li>
@@ -139,7 +139,7 @@ export const Footer = () => {
 
           {/* Service Areas */}
           <div>
-            <h3 className="font-heading font-bold text-slate-800 text-sm tracking-wider uppercase mb-6">
+            <h3 className="font-heading font-bold text-slate-200 text-sm tracking-wider uppercase mb-6">
               Service Areas
             </h3>
             <ul className="flex flex-col gap-3">
@@ -147,7 +147,7 @@ export const Footer = () => {
                 <li key={loc.id}>
                   <Link
                     href={`/locations/${loc.slug}`}
-                    className="font-sans text-sm text-slate-600 hover:text-primary transition-colors block"
+                    className="font-sans text-sm text-slate-300 hover:text-secondary transition-colors block"
                   >
                     Safety Nets in {loc.name}
                   </Link>
@@ -156,7 +156,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/locations"
-                  className="font-sans text-sm text-primary font-semibold hover:underline block"
+                  className="font-sans text-sm text-secondary font-semibold hover:underline block"
                 >
                   All Locations &rarr;
                 </Link>
@@ -166,31 +166,31 @@ export const Footer = () => {
 
           {/* Contact Details */}
           <div>
-            <h3 className="font-heading font-bold text-slate-800 text-sm tracking-wider uppercase mb-6">
+            <h3 className="font-heading font-bold text-slate-200 text-sm tracking-wider uppercase mb-6">
               Get In Touch
             </h3>
             <ul className="flex flex-col gap-4">
               <li className="flex gap-3 items-start">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="font-sans text-sm text-slate-600 leading-relaxed">
+                <MapPin className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                <span className="font-sans text-sm text-slate-300 leading-relaxed">
                   Address: Sangamwadi, Pune, Maharashtra - 411001
                 </span>
               </li>
               <li>
                 <a
                   href="tel:+919797974476"
-                  className="flex gap-3 items-center group font-sans text-sm text-slate-600 hover:text-primary transition-colors"
+                  className="flex gap-3 items-center group font-sans text-sm text-slate-300 hover:text-secondary transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <Phone className="w-5 h-5 text-secondary shrink-0" />
                   <span className="group-hover:underline">+91 97979 74476</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@allindiaenterprises.com"
-                  className="flex gap-3 items-center group font-sans text-sm text-slate-600 hover:text-primary transition-colors"
+                  className="flex gap-3 items-center group font-sans text-sm text-slate-300 hover:text-secondary transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <Mail className="w-5 h-5 text-secondary shrink-0" />
                   <span className="group-hover:underline">info@allindiaenterprises.com</span>
                 </a>
               </li>
@@ -198,16 +198,16 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-200/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-xs text-slate-500">
+        <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="font-sans text-xs text-slate-400">
             &copy; {currentYear} Allind Safety. All rights reserved. Designed to clean visual standards.
           </p>
-          <div className="flex gap-6 text-xs text-slate-500 font-sans">
-            <Link href="/privacy" className="hover:text-slate-700">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-700">Terms of Service</Link>
+          <div className="flex gap-6 text-xs text-slate-400 font-sans">
+            <Link href="/privacy" className="hover:text-slate-200">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-slate-200">Terms of Service</Link>
             <button
               onClick={handleScrollToTop}
-              className="flex items-center gap-1 hover:text-slate-700 focus:outline-none cursor-pointer"
+              className="flex items-center gap-1 hover:text-slate-200 focus:outline-none cursor-pointer"
             >
               Back to top <ArrowUp className="w-3.5 h-3.5" />
             </button>
@@ -216,14 +216,14 @@ export const Footer = () => {
       </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+      <>
         {/* Call Now CTA */}
         <a
           href="tel:9797974476"
-          className="w-14 h-14 rounded-full bg-primary hover:bg-teal-700 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 group relative cursor-pointer"
+          className="fixed bottom-6 right-6 md:bottom-24 z-40 w-14 h-14 rounded-full bg-primary hover:bg-teal-700 shadow-2xl flex items-center justify-center text-white transition-all hover:scale-110 active:scale-95 group cursor-pointer"
         >
           <Phone className="w-6 h-6 animate-pulse" />
-          <span className="absolute right-full mr-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+          <span className="absolute right-full mr-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 whitespace-nowrap hidden md:block">
             Call: +91 97979 74476
           </span>
         </a>
@@ -233,14 +233,14 @@ export const Footer = () => {
           href="https://wa.me/919199199976"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 group relative cursor-pointer"
+          className="fixed bottom-6 left-6 md:left-auto md:right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-2xl flex items-center justify-center text-white transition-all hover:scale-110 active:scale-95 group cursor-pointer"
         >
           <MessageCircle className="w-7 h-7" />
-          <span className="absolute right-full mr-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+          <span className="absolute right-full mr-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 whitespace-nowrap hidden md:block">
             Chat on WhatsApp
           </span>
         </a>
-      </div>
+      </>
     </footer>
   );
 };

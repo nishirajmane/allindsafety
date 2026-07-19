@@ -161,3 +161,24 @@ html.lenis-complex {
   pointer-events: none;
 }
 
+/* Premium Flashy Gradient Mesh Backgrounds */
+.bg-gradient-mesh-primary {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.09) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(15, 118, 110, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.08) 0px, transparent 50%);
+}
+
+.bg-gradient-mesh-dark {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.18) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(15, 118, 110, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(34, 197, 94, 0.1) 0px, transparent 50%);
+}
+
+
