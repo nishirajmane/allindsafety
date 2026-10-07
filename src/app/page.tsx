@@ -88,7 +88,7 @@ export default function Home() {
         <ServicesSection />
       </div>
       <MotionReveal><WhyChooseUs /></MotionReveal>
-      <MotionReveal><WorkPreview /></MotionReveal>
+      <WorkPreview />
       <MotionReveal><TestimonialCarousel /></MotionReveal>
       <MotionReveal><CoverageMap /></MotionReveal>
       <MotionReveal><FAQSection /></MotionReveal>

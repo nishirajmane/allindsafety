@@ -1,11 +1,15 @@
 "use client";
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { useMotionPaused } from "./MotionExperience";
 import { m, useAnimationControls, useReducedMotion } from "framer-motion";
 
 export function MotionReveal({ children, className, delay = 0, hover = false }: { children: ReactNode; className?: string; delay?: number; hover?: boolean }) {
   const controls = useAnimationControls();
-  const reduceMotion = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion();
+  const paused = useMotionPaused();
+  const reduceMotion = prefersReducedMotion || paused;
   const played = useRef(false);
+  useEffect(() => { if (reduceMotion) { controls.stop(); controls.set({ opacity: 1, y: 0, scale: 1 }); } }, [reduceMotion, controls]);
   return <m.div
     className={className}
     initial={false}
