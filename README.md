@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Allind Safety
 
-## Getting Started
+Mobile-first safety net and invisible grill website for Pune, built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
-First, run the development server:
+## Local development
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Run `npm ci`, then `npm run dev`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run `npm run build` and `npm run verify`. The site exports every service and location route into `out/`. Run `npm start` to serve the export locally.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Images and interactions
 
-## Learn More
+`node scripts/optimize-images.cjs` creates responsive WebP images from the hero artwork and real installation photos. The hero prioritizes its mobile-sized image; other images load lazily. Most pages render with server components. The gallery uses a keyboard- and touch-friendly native dialog. The office map loads only when requested, and enquiry forms open WhatsApp directly. No enquiry is stored automatically.
 
-To learn more about Next.js, take a look at the following resources:
+## Sites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`.openai/hosting.json` stores the Sites identity and static export configuration. Source preparation and publishing use the Sites plugin. The `.sites-release/` folder contains the isolated publishing checkout; the application source remains in this repository.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Animation and Vercel
 
-## Deploy on Vercel
+GSAP animates page entrances and desktop hero parallax. Framer Motion supplies section reveals and spring card interactions. Motion loads on demand and respects reduced-motion preferences.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel deploys the GitHub main branch. Production metadata defaults to https://www.allindsafety.com; SITE_ORIGIN can override it for other hosts.

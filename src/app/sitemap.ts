@@ -1,9 +1,11 @@
+import { siteOrigin } from "@/data/site";
+export const dynamic = 'force-static';
 import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 import { locationsData } from "@/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://allindiaenterprises.com";
+  const baseUrl = siteOrigin;
 
   // Base routes
   const routes = ["", "/about", "/gallery", "/contact", "/locations"].map((route) => ({

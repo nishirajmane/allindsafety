@@ -1,4 +1,7 @@
+import { siteOrigin } from "@/data/site";
 import { HeroSection } from "@/components/home/HeroSection";
+import { WorkPreview } from "@/components/home/WorkPreview";
+import { MotionReveal } from "@/components/motion/MotionReveal";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
@@ -13,9 +16,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "All India Safety",
-    "image": "https://allindiaenterprises.com/og-image.jpg",
-    "@id": "https://allindiaenterprises.com/#localbusiness",
-    "url": "https://allindiaenterprises.com",
+    "image": `${siteOrigin}/logo.png`,
+    "@id": `${siteOrigin}/#localbusiness`,
+    "url": siteOrigin,
     "telephone": "+919797974476",
     "priceRange": "₹₹",
     "address": {
@@ -68,7 +71,7 @@ export default function Home() {
           "@type": "Service",
           "name": service.title,
           "description": service.shortDescription,
-          "url": `https://allindiaenterprises.com/services/${service.slug}`
+          "url": `${siteOrigin}/services/${service.slug}`
         }
       }))
     }
@@ -84,11 +87,12 @@ export default function Home() {
       <div id="services">
         <ServicesSection />
       </div>
-      <WhyChooseUs />
-      <TestimonialCarousel />
-      <CoverageMap />
-      <FAQSection />
-      <LeadForm />
+      <MotionReveal><WhyChooseUs /></MotionReveal>
+      <MotionReveal><WorkPreview /></MotionReveal>
+      <MotionReveal><TestimonialCarousel /></MotionReveal>
+      <MotionReveal><CoverageMap /></MotionReveal>
+      <MotionReveal><FAQSection /></MotionReveal>
+      <MotionReveal><LeadForm /></MotionReveal>
     </div>
   );
 }

@@ -1,0 +1,6 @@
+const http=require('node:http');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve('out');
+const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'application/javascript','.json':'application/json','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.ico':'image/x-icon','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain','.xml':'application/xml','.webmanifest':'application/manifest+json'};
+http.createServer((req,res)=>{let name;try{name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);}catch{res.writeHead(400).end();return;}let file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep)&&file!==root){res.writeHead(403).end();return;}if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');if(!fs.existsSync(file)){res.writeHead(404,{'Content-Type':'text/html'});fs.createReadStream(path.join(root,'404.html')).pipe(res);return;}res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});fs.createReadStream(file).pipe(res);}).listen(Number(process.env.PORT)||3000,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:'+(process.env.PORT||3000)));

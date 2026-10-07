@@ -1,3 +1,5 @@
+import { siteOrigin } from "@/data/site";
+export const dynamic = 'force-static';
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://allindiaenterprises.com/sitemap.xml",
+    sitemap: `${siteOrigin}/sitemap.xml`,
   };
 }
