@@ -89,3 +89,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.motion-toggle,.scroll-progress { display:none; } }
 
 @media(min-width:1024px) { .editorial-work:not([data-work-motion]) .work-track { display:grid; width:auto; grid-template-columns:repeat(3,minmax(0,1fr)); }.editorial-work:not([data-work-motion]) .work-photo { width:auto; }.editorial-work:not([data-work-motion]) .work-description { flex-direction:column; } }
+/* Keep the second headline solid and easy to read on small screens. */
+.editorial-hero .hero-copy h1 .hero-line-outline { color:var(--lime); -webkit-text-stroke:0; }
+@media(max-width:760px) { .editorial-hero .hero-sticker { display:none; } }
