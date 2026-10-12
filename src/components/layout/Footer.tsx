@@ -1,6 +1,74 @@
 import Link from "next/link";
-import { Phone, MessageCircle, ShieldCheck } from "lucide-react";
+import { business, nav, whatsappLink } from "@/data/site";
 import { servicesData } from "@/data/services";
+import { PuneClock } from "./PuneClock";
+import { Reveal } from "@/components/system/Reveal";
+
 export function Footer() {
- return <><footer className="site-footer"><div className="site-container"><div className="footer-top"><div><Link className="brand" href="/"><span className="brand-mark"><ShieldCheck size={24}/></span><span>allind<span className="brand-sub">SAFETY. SORTED.</span></span></Link><p>A safer space.<br/>A little more peace of mind.</p></div><div><h3>Protect your space</h3>{servicesData.map(service=><Link key={service.slug} href={`/services/${service.slug}`}>{service.title}</Link>)}</div><div><h3>Get to know us</h3><Link href="/about">Our story</Link><Link href="/gallery">Our installations</Link><Link href="/locations">Where we work</Link><Link href="/#faq">Your questions</Link><Link href="/contact">Contact us</Link></div><div><h3>Let’s talk</h3><a href="tel:+919797974476">+91 97979 74476</a><a href="mailto:info@allindiaenterprises.com">Email our team</a><p>Sangamwadi, Pune<br/>Maharashtra 411001</p><a href="https://wa.me/919199199976" target="_blank" rel="noopener noreferrer" className="footer-whatsapp">Chat on WhatsApp</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Allind Safety.</span><span>Made for safer everyday living.</span><a href="#main-content">Back to top</a></div></div></footer><div className="mobile-contact-bar"><a href="tel:+919797974476"><Phone size={18}/> Call the team</a><a href="https://wa.me/919199199976" target="_blank" rel="noopener noreferrer"><MessageCircle size={18}/> Get a quote</a></div><a className="desktop-chat" href="https://wa.me/919199199976" target="_blank" rel="noopener noreferrer"><MessageCircle size={20}/> Let’s chat</a></>;
+  return (
+    <footer className="footer" data-theme="dark">
+      <div className="wrap footer__top">
+        <div className="footer__lead">
+          <p className="mono label">(Say hello)</p>
+          <Reveal as="p" className="footer__headline">
+            Questions are free. <em>So is the site visit.</em>
+          </Reveal>
+          <div className="footer__contact">
+            <a href={`tel:${business.phone}`} className="link-xl roll" data-text={business.phoneDisplay}>
+              <span>{business.phoneDisplay}</span>
+            </a>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="link-xl roll" data-text="WhatsApp ↗">
+              <span>WhatsApp ↗</span>
+            </a>
+          </div>
+        </div>
+        <div className="footer__cols">
+          <div>
+            <p className="mono label">Services</p>
+            {servicesData.map((s) => (
+              <Link key={s.slug} href={`/services/${s.slug}`}>
+                {s.title}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <p className="mono label">Explore</p>
+            {nav.map((n) => (
+              <Link key={n.href} href={n.href}>
+                {n.label}
+              </Link>
+            ))}
+            <Link href="/#faq">FAQ</Link>
+          </div>
+          <div>
+            <p className="mono label">Base</p>
+            <p>
+              {business.street}, {business.city}
+              <br />
+              {business.region} {business.postalCode}
+            </p>
+            <PuneClock />
+            <a href={business.social.instagram} target="_blank" rel="noopener noreferrer">
+              Instagram ↗
+            </a>
+            <a href={business.social.facebook} target="_blank" rel="noopener noreferrer">
+              Facebook ↗
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="footer__giant" aria-hidden="true">
+        <svg viewBox="0 0 1000 210" preserveAspectRatio="xMidYMid meet">
+          <text x="500" y="178" textAnchor="middle">
+            allind
+          </text>
+        </svg>
+      </div>
+      <div className="wrap footer__bottom mono">
+        <span>© {new Date().getFullYear()} {business.legalName}</span>
+        <span>Safety nets · Invisible grills · Bird protection</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+  );
 }

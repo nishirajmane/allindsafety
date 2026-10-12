@@ -1,13 +1,35 @@
-"use client";
-import { useRef, useState, type TouchEvent } from "react";
-import { X, ChevronLeft, ChevronRight, Plus } from "lucide-react";
-import Link from "next/link";
-const files = ["WhatsApp Image 2026-06-20 at 11.16.36 (1)","WhatsApp Image 2026-06-20 at 11.16.36","WhatsApp Image 2026-06-20 at 11.16.37 (1)","WhatsApp Image 2026-06-20 at 11.16.37 (2)","WhatsApp Image 2026-06-20 at 11.16.37","WhatsApp Image 2026-06-20 at 11.16.38 (1)","WhatsApp Image 2026-06-20 at 11.16.38","WhatsApp Image 2026-06-20 at 11.16.46","WhatsApp Image 2026-06-20 at 11.16.47 (1)","WhatsApp Image 2026-06-20 at 11.16.47","WhatsApp Image 2026-06-20 at 11.18.29 (1)","WhatsApp Image 2026-06-20 at 11.18.32","WhatsApp Image 2026-06-20 at 11.18.40"];
+import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/PageHero";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { Cta } from "@/components/home/Cta";
+import { work } from "@/data/content";
+
+export const metadata: Metadata = {
+  title: "Our Work — Safety Net & Invisible Grill Installations",
+  description: "Real Allind Safety installations across Pune: balcony safety nets, invisible grills, children nets, sports nets and bird spikes.",
+  alternates: { canonical: "/gallery/" },
+};
+
 export default function GalleryPage() {
- const [index,setIndex] = useState(0); const dialog = useRef<HTMLDialogElement>(null); const touchStart = useRef(0);
- function open(i:number) { setIndex(i); dialog.current?.showModal(); document.body.style.overflow="hidden"; }
- function close() { dialog.current?.close(); document.body.style.overflow=""; }
- function change(direction:number) { setIndex(i=>(i+direction+files.length)%files.length); }
- function swipe(e:TouchEvent) { const diff=e.changedTouches[0].clientX-touchStart.current; if(Math.abs(diff)>50) change(diff>0?-1:1); }
- return <div className="site-container section-space"><div className="section-heading gallery-heading"><div><span className="eyebrow">THE ALLIND PHOTO ALBUM</span><h1>Real work.<br/><em>Really safe spaces.</em></h1></div><p>A closer look at our safety net installations. Tap a photo to see the details.</p></div><div className="gallery-grid">{files.map((file,i)=><button key={file} className="gallery-photo" onClick={()=>open(i)} aria-label={`View installation photo ${i+1}`}><img src={`/optimized/gallery/${file}.webp`} alt={`Allind Safety net installation ${i+1}`} width="960" height="720" loading={i<2 ? "eager" : "lazy"} decoding="async"/><span className="gallery-photo-label"><span>Installation {String(i+1).padStart(2,'0')}</span><Plus size={18}/></span></button>)}</div><div className="gallery-cta"><h2>Like what you see?</h2><Link href="/contact" className="action action-lime">Let’s talk about your space</Link></div><dialog ref={dialog} className="gallery-dialog" aria-label="Installation photo viewer" onClose={()=>{document.body.style.overflow=""}} onClick={e=>{if(e.target===e.currentTarget)close()}} onKeyDown={e=>{if(e.key==='ArrowRight')change(1);if(e.key==='ArrowLeft')change(-1)}}><div className="viewer-bar"><span>ALLIND / OUR INSTALLATIONS</span><button autoFocus aria-label="Close photo viewer" onClick={close}><X/></button></div><img src={`/optimized/gallery/${files[index]}.webp`} alt={`Installation photo ${index+1}`} width="960" height="720" onTouchStart={e=>{touchStart.current=e.touches[0].clientX}} onTouchEnd={swipe}/><div className="viewer-controls"><button aria-label="Previous photo" onClick={()=>change(-1)}><ChevronLeft/></button><span>{index+1} / {files.length}</span><button aria-label="Next photo" onClick={()=>change(1)}><ChevronRight/></button></div></dialog></div>;
+  return (
+    <>
+      <PageHero
+        crumbs={[{ label: "Work" }]}
+        title={
+          <>
+            Real balconies. <em>Really held.</em>
+          </>
+        }
+        lede={`${work.length} recent installs from across Pune — unfiltered, straight from our crews' phones. Tap any photo to look closer.`}
+      />
+      <GalleryGrid />
+      <Cta
+        title={
+          <>
+            Yours could be <em>next.</em>
+          </>
+        }
+      />
+    </>
+  );
 }

@@ -1,5 +1,52 @@
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import type { Metadata } from "next";
 import { locationsData } from "@/data/locations";
-export const metadata={title:"Service Areas in Pune | Allind Safety",description:"Find safety net and invisible grill installation services in Pune neighbourhoods, with free site measurements and local support."};
-export default function LocationsPage(){return <div className="site-container section-space"><div className="section-heading gallery-heading"><div><span className="eyebrow">LOCAL PEOPLE. LOCAL KNOW-HOW.</span><h1>Your neighbourhood.<br/><em>Our next stop.</em></h1></div><p>Our team works across Pune. Explore your area or contact us to arrange a free site visit.</p></div><div className="areas-grid">{locationsData.map((loc,i)=><Link href={`/locations/${loc.slug}`} key={loc.slug} className="area-card"><div><MapPin size={24}/><span>{String(i+1).padStart(2,'0')}</span></div><h2>{loc.name}</h2><p>Safety nets & invisible grills</p><span className="text-link">Explore local services</span></Link>)}</div><div className="gallery-cta"><h2>Don’t see your area?</h2><Link href="/contact" className="action action-lime">Check with our team</Link></div></div>;}
+import { PageHero } from "@/components/ui/PageHero";
+import { Cta } from "@/components/home/Cta";
+
+export const metadata: Metadata = {
+  title: "Service Areas Across Pune",
+  description: "Safety nets and invisible grills across Pune — Kothrud, Baner, Wakad, Hinjewadi, Kharadi, Viman Nagar and more. Local crews, free site visits.",
+  alternates: { canonical: "/locations/" },
+};
+
+export default function LocationsPage() {
+  return (
+    <>
+      <PageHero
+        crumbs={[{ label: "Areas" }]}
+        title={
+          <>
+            Your neighbourhood. <em>Our next stop.</em>
+          </>
+        }
+        lede="Local crews across Pune, usually on site within 24 hours. Pick your area for local details — or just call, we probably cover it."
+      />
+      <section className="section" data-theme="light">
+        <div className="wrap">
+          <ul className="row-list row-list--xl">
+            {locationsData.map((l, i) => (
+              <li key={l.slug}>
+                <Link href={`/locations/${l.slug}`} className="row-list__link" data-cursor="Open">
+                  <span className="mono">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="row-list__title">{l.name}</span>
+                  <span className="row-list__meta mono">
+                    {l.postalCode} · {l.coordinates[0].toFixed(2)}°N {l.coordinates[1].toFixed(2)}°E
+                  </span>
+                  <span aria-hidden="true">↗</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <Cta
+        title={
+          <>
+            Not on the list? <em>Ask anyway.</em>
+          </>
+        }
+      />
+    </>
+  );
+}

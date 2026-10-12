@@ -1,15 +1,148 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Check, ShieldCheck, Ruler, Sun, HeartHandshake } from "lucide-react";
 import { servicesData } from "@/data/services";
 import { locationsData } from "@/data/locations";
-import { LeadForm } from "@/components/home/LeadForm";
-interface PageProps { params:Promise<{slug:string}>; }
-export function generateStaticParams() { return servicesData.map(service=>({slug:service.slug})); }
-export async function generateMetadata({params}:PageProps):Promise<Metadata> { const {slug}=await params; const service=servicesData.find(s=>s.slug===slug); return {title:`${service?.title||'Service not found'} | Allind Safety`,description:service?.shortDescription,openGraph:{title:`${service?.title||'Service'} | Allind Safety`,description:service?.shortDescription,images:service ? [{url:service.image}] : []}}; }
-export default async function ServicePage({params}:PageProps) {
- const {slug}=await params; const service=servicesData.find(s=>s.slug===slug); if(!service)notFound();
- const schema={"@context":"https://schema.org","@type":"Service",name:service.title,description:service.shortDescription,areaServed:"Pune",provider:{"@type":"LocalBusiness",name:"Allind Safety",telephone:"+919797974476",address:{"@type":"PostalAddress",streetAddress:"Sangamwadi",addressLocality:"Pune",addressRegion:"Maharashtra",postalCode:"411001",addressCountry:"IN"}}};
- return <><section className="site-container section-space"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><Link href="/#services" className="back-link">All safety solutions</Link><div className="detail-hero"><div><span className="eyebrow">MADE TO FIT. MADE TO PROTECT.</span><h1>{service.title}<span>.</span></h1><p>{service.shortDescription}</p><div className="detail-actions"><a href="#service-quote" className="action action-lime">Get a free quote</a><a href="tel:+919797974476" className="action action-outline">Talk to our team</a></div><span className="detail-note"><ShieldCheck size={18}/> Expert installation in Pune</span></div><img src={service.image} alt={service.title+" installation"} width="960" height="720" fetchPriority="high"/></div><div className="detail-content"><div><span className="eyebrow">WHY THIS WORKS FOR YOUR SPACE</span><h2>Every detail,<br/>thought through.</h2><p>{service.fullDescription}</p><ul className="feature-list">{service.features.map(feature=><li key={feature}><Check size={18}/><span>{feature}</span></li>)}</ul></div><aside className="spec-panel"><h3>The material details.</h3>{[{icon:Ruler,label:"Material",value:service.specs.material},{icon:Sun,label:"Expected lifespan",value:service.specs.durability},{icon:HeartHandshake,label:"Warranty",value:service.specs.warranty},{icon:ShieldCheck,label:"Strength",value:service.specs.strength}].map(({icon:Icon,label,value})=><div key={label}><Icon size={20}/><div><span>{label}</span><strong>{value}</strong></div></div>)}<p>Confirm material specifications and warranty terms with our team before installation.</p></aside></div><div className="detail-areas"><h2>Installed across Pune.</h2><div className="location-chips">{locationsData.map(loc=><Link href={`/locations/${loc.slug}`} key={loc.slug}>{loc.name}</Link>)}</div></div></section><section id="service-quote" className="detail-quote section-space"><div className="site-container"><div className="section-heading"><div><span className="eyebrow">LET’S FIND YOUR FIT</span><h2>A free visit.<br/>A clear quote.</h2></div><p>Share a few details and talk to our team about {service.title.toLowerCase()}.</p></div><div className="detail-quote-form"><LeadForm minimal/></div></div></section></>;
+import { business, providerSchema, siteOrigin } from "@/data/site";
+import { PageHero } from "@/components/ui/PageHero";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
+import { Reveal } from "@/components/system/Reveal";
+import { Cta } from "@/components/home/Cta";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return servicesData.map((s) => ({ slug: s.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicesData.find((s) => s.slug === slug);
+  if (!service) return {};
+  return {
+    title: `${service.title} in Pune`,
+    description: service.shortDescription,
+    alternates: { canonical: `/services/${service.slug}/` },
+    openGraph: { title: `${service.title} in Pune — Allind Safety`, description: service.shortDescription, images: [{ url: service.image }] },
+  };
+}
+
+export default async function ServicePage({ params }: PageProps) {
+  const { slug } = await params;
+  const index = servicesData.findIndex((s) => s.slug === slug);
+  if (index < 0) notFound();
+  const service = servicesData[index];
+  const next = servicesData[(index + 1) % servicesData.length];
+  const words = service.title.split(" ");
+  const last = words.pop();
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.fullDescription,
+    url: `${siteOrigin}/services/${service.slug}`,
+    image: `${siteOrigin}${service.image}`,
+    areaServed: { "@type": "City", name: "Pune" },
+    provider: providerSchema,
+  };
+
+  const specs = [
+    ["Material", service.specs.material],
+    ["Strength", service.specs.strength],
+    ["Expected life", service.specs.durability],
+    ["Warranty", service.specs.warranty],
+  ];
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <PageHero
+        crumbs={[{ label: "Services", href: "/#services" }, { label: `0${index + 1}` }]}
+        title={
+          <>
+            {words.join(" ")} <em>{last}.</em>
+          </>
+        }
+        lede={service.shortDescription}
+      >
+        <Link href="#quote" className="btn btn--sky btn--lg">
+          Get a free quote
+        </Link>
+        <a href={`tel:${business.phone}`} className="btn btn--ghost btn--lg">
+          Talk to an installer
+        </a>
+      </PageHero>
+
+      <div data-theme="dark" className="bleed">
+        <ParallaxImage src={service.image} alt={`${service.title} installed on a Pune balcony`} width={960} height={523} className="bleed__img" priority />
+      </div>
+
+      <section className="section detail" data-theme="light">
+        <div className="wrap detail__grid">
+          <div>
+            <p className="mono label">(01) Why it works</p>
+            <Reveal as="p" className="detail__lead">
+              {service.fullDescription}
+            </Reveal>
+          </div>
+          <aside className="spec-sheet" aria-label="Specifications">
+            <p className="mono label">(02) Spec sheet</p>
+            <dl>
+              {specs.map(([k, v]) => (
+                <div key={k}>
+                  <dt className="mono">{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="spec-sheet__note">Final material and warranty terms are confirmed in writing with your quote.</p>
+          </aside>
+        </div>
+
+        <div className="wrap">
+          <p className="mono label detail__features-label">(03) What you get</p>
+          <ol className="features">
+            {service.features.map((f, i) => (
+              <li key={f}>
+                <span className="mono">0{i + 1}</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="wrap detail__areas">
+          <p className="mono label">(04) Installed across Pune</p>
+          <div className="chips-row">
+            {locationsData.map((l) => (
+              <Link key={l.slug} href={`/locations/${l.slug}`} className="chip">
+                {l.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Link href={`/services/${next.slug}`} className="next-link" data-theme="dark" data-cursor="Next">
+        <span className="wrap">
+          <span className="mono label">Next service</span>
+          <span className="next-link__title">
+            {next.title} <span aria-hidden="true">→</span>
+          </span>
+        </span>
+      </Link>
+
+      <Cta
+        defaultService={service.title}
+        title={
+          <>
+            A free visit. <em>A clear quote.</em>
+          </>
+        }
+      />
+    </>
+  );
 }

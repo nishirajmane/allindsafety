@@ -1,11 +1,158 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Check, MapPin } from "lucide-react";
 import { locationsData } from "@/data/locations";
 import { servicesData } from "@/data/services";
-import { LeadForm } from "@/components/home/LeadForm";
-interface PageProps { params:Promise<{slug:string}>; }
-export function generateStaticParams(){return locationsData.map(loc=>({slug:loc.slug}));}
-export async function generateMetadata({params}:PageProps):Promise<Metadata>{const {slug}=await params;const loc=locationsData.find(l=>l.slug===slug);return {title:`Safety Nets in ${loc?.name||'Pune'} | Allind Safety`,description:`Safety nets, pigeon nets, and invisible grills in ${loc?.name||'Pune'}, Pune. Ask our local team for a free site visit and clear quote.`};}
-export default async function LocationPage({params}:PageProps){const {slug}=await params;const loc=locationsData.find(l=>l.slug===slug);if(!loc)notFound();const services=servicesData.filter(service=>loc.popularServices.includes(service.slug));const schema={"@context":"https://schema.org","@type":"Service",name:`Safety net installation in ${loc.name}`,areaServed:{"@type":"Place",name:`${loc.name}, Pune`},provider:{"@type":"LocalBusiness",name:"Allind Safety",telephone:"+919797974476",address:{"@type":"PostalAddress",streetAddress:"Sangamwadi",addressLocality:"Pune",addressRegion:"Maharashtra",postalCode:"411001",addressCountry:"IN"}}};return <><section className="site-container section-space"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><Link href="/locations" className="back-link">All our service areas</Link><div className="detail-hero"><div><span className="eyebrow"><MapPin size={16}/> {loc.name.toUpperCase()} / PUNE</span><h1>Safer spaces<br/>in {loc.name}<span>.</span></h1><p>{loc.description}</p><a href="#local-quote" className="action action-lime">Book a free site visit</a></div><picture><source type="image/webp" srcSet="/optimized/hero-image-640.webp 640w, /optimized/hero-image-1200.webp 1200w" sizes="(max-width:760px) 100vw, 50vw"/><img src="/optimized/hero-image-1200.webp" alt="Protected apartment balcony with open city views" width="1448" height="1086"/></picture></div><div className="detail-areas"><div className="section-heading"><div><span className="eyebrow">YOUR LOCAL SAFETY SOLUTIONS</span><h2>A better fit for your home.</h2></div></div><div className="service-grid">{services.map(service=><Link href={`/services/${service.slug}`} key={service.slug} className="service-card"><div className="service-photo"><img src={service.image} alt={service.title} width="960" height="720" loading="lazy"/></div><div className="service-info"><h3>{service.title}</h3><p>{service.shortDescription}</p><span className="text-link">Explore this service</span></div></Link>)}</div></div><div className="local-faq"><h2>Your questions, answered.</h2><div className="faq-list">{loc.faq.map(faq=><details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></div><div className="local-highlights"><span className="eyebrow">WHAT TO EXPECT</span><ul className="feature-list">{loc.highlights.map(text=><li key={text}><Check size={18}/><span>{text}</span></li>)}</ul></div></section><section className="detail-quote section-space" id="local-quote"><div className="site-container"><div className="section-heading"><div><span className="eyebrow">LET’S TALK ABOUT YOUR SPACE</span><h2>Book a visit in {loc.name}.</h2></div></div><div className="detail-quote-form"><LeadForm minimal/></div></div></section></>;}
+import { business, providerSchema, siteOrigin } from "@/data/site";
+import { PageHero } from "@/components/ui/PageHero";
+import { FaqList } from "@/components/ui/FaqList";
+import { Reveal } from "@/components/system/Reveal";
+import { Cta } from "@/components/home/Cta";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return locationsData.map((l) => ({ slug: l.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const loc = locationsData.find((l) => l.slug === slug);
+  if (!loc) return {};
+  return {
+    title: `Safety Nets & Invisible Grills in ${loc.name}, Pune`,
+    description: `Balcony safety nets, pigeon nets and invisible grills in ${loc.name}, Pune ${loc.postalCode}. Free site visit and a clear written quote from a local crew.`,
+    alternates: { canonical: `/locations/${loc.slug}/` },
+  };
+}
+
+export default async function LocationPage({ params }: PageProps) {
+  const { slug } = await params;
+  const loc = locationsData.find((l) => l.slug === slug);
+  if (!loc) notFound();
+  const services = servicesData.filter((s) => loc.popularServices.includes(s.slug));
+  const [lat, lng] = loc.coordinates;
+
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `Safety net installation in ${loc.name}`,
+      url: `${siteOrigin}/locations/${loc.slug}`,
+      areaServed: { "@type": "Place", name: `${loc.name}, Pune`, address: { "@type": "PostalAddress", postalCode: loc.postalCode, addressLocality: "Pune", addressCountry: "IN" } },
+      provider: providerSchema,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: loc.faq.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
+    },
+  ];
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <PageHero
+        crumbs={[{ label: "Areas", href: "/locations" }, { label: loc.name }]}
+        title={
+          <>
+            Safety nets in <em>{loc.name}.</em>
+          </>
+        }
+        lede={loc.tagline}
+      >
+        <Link href="#quote" className="btn btn--sky btn--lg">
+          Book a visit in {loc.name}
+        </Link>
+        <a href={`tel:${business.phone}`} className="btn btn--ghost btn--lg">
+          {business.phoneDisplay}
+        </a>
+      </PageHero>
+
+      <section className="section detail" data-theme="light">
+        <div className="wrap detail__grid">
+          <div>
+            <p className="mono label">(01) The neighbourhood</p>
+            <Reveal as="p" className="detail__lead">
+              {loc.description}
+            </Reveal>
+          </div>
+          <aside className="spec-sheet" aria-label="Local details">
+            <p className="mono label">(02) Local file</p>
+            <dl>
+              <div>
+                <dt className="mono">Pin code</dt>
+                <dd>{loc.postalCode}</dd>
+              </div>
+              <div>
+                <dt className="mono">Coordinates</dt>
+                <dd>
+                  {lat.toFixed(3)}°N {lng.toFixed(3)}°E
+                </dd>
+              </div>
+              <div>
+                <dt className="mono">Site visit</dt>
+                <dd>Free, usually within 24 hrs</dd>
+              </div>
+              <div>
+                <dt className="mono">Hours</dt>
+                <dd>{business.hours.label}</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <div className="wrap">
+          <p className="mono label detail__features-label">(03) What to expect</p>
+          <ol className="features">
+            {loc.highlights.map((h, i) => (
+              <li key={h}>
+                <span className="mono">0{i + 1}</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="wrap detail__services">
+          <p className="mono label">(04) Popular in {loc.name}</p>
+          <ul className="row-list">
+            {services.map((s, i) => (
+              <li key={s.slug}>
+                <Link href={`/services/${s.slug}`} className="row-list__link" data-cursor="Explore">
+                  <span className="mono">0{i + 1}</span>
+                  <span className="row-list__title">{s.title}</span>
+                  <span className="row-list__meta mono">{s.specs.strength}</span>
+                  <span aria-hidden="true">↗</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section" data-theme="dark">
+        <div className="wrap faq-section__grid">
+          <div className="faq-section__head">
+            <p className="mono label">(05) Local questions</p>
+            <h2 className="h2">
+              Asked in <em>{loc.name}.</em>
+            </h2>
+          </div>
+          <FaqList items={loc.faq} />
+        </div>
+      </section>
+
+      <Cta
+        defaultArea={loc.name}
+        title={
+          <>
+            {loc.name}, <em>let&rsquo;s talk.</em>
+          </>
+        }
+      />
+    </>
+  );
+}

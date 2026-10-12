@@ -1,4 +1,88 @@
 import Link from "next/link";
-import { ShieldCheck, Ruler, Heart } from "lucide-react";
-export const metadata = {title:"Our Story | Allind Safety",description:"Meet Allind Safety, Pune’s local safety net and invisible grill installation team. Thoughtful protection for homes, families, and pets."};
-export default function AboutPage() { return <><section className="about-hero section-space site-container"><span className="eyebrow">HELLO, WE’RE ALLIND.</span><div className="about-grid"><div><h1>Life feels better<br/>when it feels <em>safe.</em></h1><p>Fresh air on the balcony. Children at play. Pets exploring. A home should have room for all of it.</p><p>We’re a Pune-based team making everyday spaces safer with carefully fitted safety nets, invisible grills, and bird protection. Simple solutions. A little less worry.</p><Link href="/contact" className="action action-dark">Meet your local safety team</Link></div><img src="/optimized/services/invisible-grills.webp" alt="Slim invisible grill cables installed on a residential balcony" width="960" height="720"/></div></section><section className="why-section section-space"><div className="site-container"><div className="section-heading"><div><span className="eyebrow">WHAT MATTERS TO US</span><h2>Better materials.<br/>Better attention to detail.</h2></div></div><div className="about-values">{[{icon:ShieldCheck,title:"Protection with purpose",text:"We help you choose the right barrier for your family, pets, or property, with clear advice about the materials."},{icon:Ruler,title:"A fit that feels right",text:"Every space is different. We measure yours and tailor the installation around it, keeping light and ventilation in mind."},{icon:Heart,title:"People you can talk to",text:"From the first call to aftercare, our local team stays approachable. You’ll know what to expect and who to call."}].map(({icon:Icon,title,text})=><div key={title}><Icon/><h3>{title}</h3><p>{text}</p></div>)}</div></div></section><section className="site-container section-space about-bottom"><span className="eyebrow">OUR NEIGHBOURHOOD IS YOURS.</span><h2>Based in Pune.<br/>Here for your home.</h2><p>Our base is in Sangamwadi, with installations across Pune’s neighbourhoods and residential societies.</p><Link href="/locations" className="action action-outline">Explore our service areas</Link></section></>; }
+import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/PageHero";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
+import { Reveal } from "@/components/system/Reveal";
+import { Counter } from "@/components/system/Counter";
+import { Cta } from "@/components/home/Cta";
+import { stats } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "About Us — Pune's Safety Net Specialists",
+  description: "Meet Allind Safety: a Pune-based crew making balconies safer with safety nets, invisible grills and bird protection for over 10 years.",
+  alternates: { canonical: "/about/" },
+};
+
+const values = [
+  { title: "Protection with purpose", text: "We recommend the barrier your home actually needs — for children, pets or pigeons — and explain the materials in plain words." },
+  { title: "A fit that feels right", text: "Every balcony is different. We measure yours, tailor the installation and keep light, air and the view exactly where they were." },
+  { title: "People you can call", text: "From the first call to aftercare, you speak to the people who install. You'll always know what's next and who to ring." },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <PageHero
+        crumbs={[{ label: "About" }]}
+        title={
+          <>
+            Life feels better when it feels <em>safe.</em>
+          </>
+        }
+        lede="We're a Pune crew that spends its days on other people's balconies — tying knots, tensioning cables and making high-rise living a little less nerve-wracking."
+      />
+
+      <section className="section about" data-theme="light">
+        <div className="wrap about__grid">
+          <div className="about__copy">
+            <p className="mono label">(01) Our story</p>
+            <Reveal as="p" className="detail__lead">
+              Fresh air on the balcony. Children at play. Pets exploring. A home should have room for all of it — without anyone holding their breath.
+            </Reveal>
+            <p>
+              From our base in Sangamwadi, we&rsquo;ve spent more than a decade protecting homes across Pune&rsquo;s neighbourhoods and housing societies with safety nets, invisible
+              grills and bird protection. Simple solutions, fitted carefully, that quietly do their job for years.
+            </p>
+            <Link href="/gallery" className="btn btn--ghost btn--lg">
+              See our work
+            </Link>
+          </div>
+          <ParallaxImage src="/art/work/03-kid-safe-balcony-1280.webp" alt="A child safely standing at a netted balcony" width={960} height={1280} className="about__img" />
+        </div>
+      </section>
+
+      <section className="section" data-theme="dark">
+        <div className="wrap">
+          <p className="mono label">(02) What we care about</p>
+          <div className="values">
+            {values.map((v, i) => (
+              <article key={v.title}>
+                <span className="values__num">0{i + 1}</span>
+                <h2>{v.title}</h2>
+                <p>{v.text}</p>
+              </article>
+            ))}
+          </div>
+          <dl className="stats stats--dark">
+            {stats.map((s) => (
+              <div key={s.label} className="stats__item">
+                <dt className="mono">{s.label}</dt>
+                <dd>
+                  <Counter value={s.value} suffix={s.suffix} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <Cta
+        title={
+          <>
+            Meet the crew. <em>Free of charge.</em>
+          </>
+        }
+      />
+    </>
+  );
+}

@@ -1,6 +1,0 @@
-import { MotionReveal } from "@/components/motion/MotionReveal";
-import Link from "next/link";
-import { servicesData } from "@/data/services";
-export function ServicesSection() {
- return <section className="services-section section-space site-container"><div className="section-heading"><div><span className="eyebrow">01 / FIND YOUR FIT</span><h2>Goodbye worries.<br/>Hello, happy spaces.</h2></div><p>From curious little feet to unwelcome feathered guests. There’s a smarter way to protect every space.</p></div><div className="service-grid">{servicesData.map((service,i)=><MotionReveal key={service.slug} className="service-card-motion" delay={(i % 3) * 0.07} hover><Link href={`/services/${service.slug}`} className="service-card"><div className="service-photo"><img src={service.image} width="960" height="720" loading="lazy" decoding="async" alt={service.title+" installation"}/><span className="service-number">0{i+1}</span><span className="service-pill">{i===2 ? "VIEW-FRIENDLY" : i===1 ? "BIRD-FREE LIVING" : "MADE TO MEASURE"}</span></div><div className="service-info"><h3>{service.title}</h3><p>{service.shortDescription}</p><span className="text-link">Explore this service <span aria-hidden="true">+</span></span></div></Link></MotionReveal>)}</div></section>;
-}

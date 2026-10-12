@@ -10,16 +10,22 @@ Run `npm ci`, then `npm run dev`.
 
 Run `npm run build` and `npm run verify`. The site exports every service and location route into `out/`. Run `npm start` to serve the export locally.
 
-## Images and interactions
+## Design
 
-`node scripts/optimize-images.cjs` creates responsive WebP images from the hero artwork and real installation photos. The hero prioritizes its mobile-sized image; other images load lazily. Most pages render with server components. The gallery uses a keyboard- and touch-friendly native dialog. The office map loads only when requested, and enquiry forms open WhatsApp directly. No enquiry is stored automatically.
+Concept: "Held." Ink, bone and a single cobalt accent; Inter Tight, Instrument Serif italics and JetBrains Mono.
 
+- The home hero is a live three.js safety net (verlet physics). Pointer presses into it; a click or tap throws a ball the net catches. It pauses off-screen and falls back to a static frame for reduced motion.
+- GSAP + ScrollTrigger drive the pinned "anatomy of a knot", the horizontal work reel, the process card deck and line reveals (SplitText). Lenis smooths wheel scrolling; touch keeps native momentum.
+- Framer Motion handles the menu, route curtain, gallery lightbox, reviews and FAQ.
+- Enquiry forms compose a WhatsApp message; nothing is stored.
+
+## Images
+
+`node scripts/art-direct-images.cjs` re-grades the raw photos in `public/gallery` and `public/services` into `public/art` with one consistent look and clean file names.
 ## Sites
 
 `.openai/hosting.json` stores the Sites identity and static export configuration. Source preparation and publishing use the Sites plugin. The `.sites-release/` folder contains the isolated publishing checkout; the application source remains in this repository.
 
-## Animation and Vercel
-
-GSAP animates page entrances and desktop hero parallax. Framer Motion supplies section reveals and spring card interactions. Motion loads on demand and respects reduced-motion preferences.
+## Vercel
 
 Vercel deploys the GitHub main branch. Production metadata defaults to https://www.allindsafety.com; SITE_ORIGIN can override it for other hosts.
