@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { work, workSrc } from "@/data/content";
 import { useLenis } from "@/components/system/SmoothScroll";
+import { Icon } from "@/components/ui/Icon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +104,7 @@ export function GalleryGrid() {
                 {String(open + 1).padStart(2, "0")} / {String(work.length).padStart(2, "0")} — {current.kind}
               </span>
               <button className="round-btn round-btn--dark" onClick={() => setOpen(null)} aria-label="Close" autoFocus>
-                ✕
+                <Icon name="close" />
               </button>
             </div>
             <motion.div className="lightbox__frame" layoutId={`photo-${current.slug}`} transition={{ duration: 0.7, ease }} onClick={() => setOpen(null)}>
@@ -113,10 +114,10 @@ export function GalleryGrid() {
               <p>{current.title}</p>
               <div>
                 <button className="round-btn round-btn--dark" onClick={() => step(-1)} aria-label="Previous photo">
-                  ←
+                  <Icon name="left" />
                 </button>
                 <button className="round-btn round-btn--dark" onClick={() => step(1)} aria-label="Next photo">
-                  →
+                  <Icon name="right" />
                 </button>
               </div>
             </div>

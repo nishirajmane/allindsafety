@@ -8,6 +8,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { Reveal } from "@/components/system/Reveal";
 import { Cta } from "@/components/home/Cta";
+import { Icon } from "@/components/ui/Icon";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -130,7 +131,7 @@ export default async function ServicePage({ params }: PageProps) {
         <span className="wrap">
           <span className="mono label">Next service</span>
           <span className="next-link__title">
-            {next.title} <span aria-hidden="true">→</span>
+            {next.title} <span aria-hidden="true"><Icon name="right" /></span>
           </span>
         </span>
       </Link>

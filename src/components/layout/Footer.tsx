@@ -3,6 +3,7 @@ import { business, nav, whatsappLink } from "@/data/site";
 import { servicesData } from "@/data/services";
 import { PuneClock } from "./PuneClock";
 import { Reveal } from "@/components/system/Reveal";
+import { Icon } from "@/components/ui/Icon";
 
 export function Footer() {
   return (
@@ -17,8 +18,11 @@ export function Footer() {
             <a href={`tel:${business.phone}`} className="link-xl roll" data-text={business.phoneDisplay}>
               <span>{business.phoneDisplay}</span>
             </a>
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="link-xl roll" data-text="WhatsApp ↗">
-              <span>WhatsApp ↗</span>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="link-xl">
+              <span className="roll" data-text="WhatsApp">
+                <span>WhatsApp</span>
+              </span>
+              <Icon name="up-right" />
             </a>
           </div>
         </div>
@@ -49,10 +53,10 @@ export function Footer() {
             </p>
             <PuneClock />
             <a href={business.social.instagram} target="_blank" rel="noopener noreferrer">
-              Instagram ↗
+              Instagram <Icon name="up-right" />
             </a>
             <a href={business.social.facebook} target="_blank" rel="noopener noreferrer">
-              Facebook ↗
+              Facebook <Icon name="up-right" />
             </a>
           </div>
         </div>
@@ -67,7 +71,7 @@ export function Footer() {
       <div className="wrap footer__bottom mono">
         <span>© {new Date().getFullYear()} {business.legalName}</span>
         <span>Safety nets · Invisible grills · Bird protection</span>
-        <a href="#top">Back to top ↑</a>
+        <a href="#top">Back to top <Icon name="up" /></a>
       </div>
     </footer>
   );

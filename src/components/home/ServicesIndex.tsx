@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 import { servicesData } from "@/data/services";
 import { Reveal } from "@/components/system/Reveal";
+import { Icon } from "@/components/ui/Icon";
 
 const short = (s: string) => s.split(" ").slice(0, 2).join(" ").replace(/[()]/g, "");
 
@@ -57,7 +58,7 @@ export function ServicesIndex() {
                   <span>{short(s.specs.durability)} life</span>
                 </span>
                 <span className="svc__arrow" aria-hidden="true">
-                  ↗
+                  <Icon name="up-right" />
                 </span>
                 <span className="svc__media">
                   <img src={s.image} alt={`${s.title} installed by Allind Safety`} width="960" height="523" loading="lazy" decoding="async" />

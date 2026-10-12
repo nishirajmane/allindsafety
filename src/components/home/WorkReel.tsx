@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { work, workSrc } from "@/data/content";
+import { Icon } from "@/components/ui/Icon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,7 +90,7 @@ export function WorkReel() {
             <span>
               See every
               <br />
-              <em>install</em> ↗
+              <em>install</em> <Icon name="up-right" />
             </span>
           </Link>
         </div>

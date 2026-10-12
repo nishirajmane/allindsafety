@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { LeadForm } from "@/components/ui/LeadForm";
 import { PuneClock } from "@/components/layout/PuneClock";
 import { business, whatsappLink } from "@/data/site";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Contact & Free Site Visit",
@@ -42,7 +43,7 @@ export default function ContactPage() {
                   <span className="contact__value">{m.value}</span>
                   <span className="contact__note">{m.note}</span>
                   <span className="contact__arrow" aria-hidden="true">
-                    ↗
+                    <Icon name="up-right" />
                   </span>
                 </a>
               </li>

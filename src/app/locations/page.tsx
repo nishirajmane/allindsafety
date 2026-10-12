@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { locationsData } from "@/data/locations";
 import { PageHero } from "@/components/ui/PageHero";
 import { Cta } from "@/components/home/Cta";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Service Areas Across Pune",
@@ -33,7 +34,7 @@ export default function LocationsPage() {
                   <span className="row-list__meta mono">
                     {l.postalCode} · {l.coordinates[0].toFixed(2)}°N {l.coordinates[1].toFixed(2)}°E
                   </span>
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"><Icon name="up-right" /></span>
                 </Link>
               </li>
             ))}

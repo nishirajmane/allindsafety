@@ -8,6 +8,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { FaqList } from "@/components/ui/FaqList";
 import { Reveal } from "@/components/system/Reveal";
 import { Cta } from "@/components/home/Cta";
+import { Icon } from "@/components/ui/Icon";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -125,7 +126,7 @@ export default async function LocationPage({ params }: PageProps) {
                   <span className="mono">0{i + 1}</span>
                   <span className="row-list__title">{s.title}</span>
                   <span className="row-list__meta mono">{s.specs.strength}</span>
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"><Icon name="up-right" /></span>
                 </Link>
               </li>
             ))}

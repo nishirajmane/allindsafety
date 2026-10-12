@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { locationsData } from "@/data/locations";
 import { Marquee } from "@/components/system/Marquee";
+import { Icon } from "@/components/ui/Icon";
 
 export function Areas() {
   const half = Math.ceil(locationsData.length / 2);
@@ -19,7 +20,7 @@ export function Areas() {
             {row.map((loc) => (
               <span key={loc.slug} className="areas__name">
                 {loc.name}
-                <i>✳</i>
+                <i><Icon name="asterisk" /></i>
               </span>
             ))}
           </Marquee>
@@ -33,7 +34,7 @@ export function Areas() {
           </Link>
         ))}
         <Link href="/locations" className="chip chip--solid">
-          All areas ↗
+          All areas <Icon name="up-right" />
         </Link>
       </nav>
     </section>

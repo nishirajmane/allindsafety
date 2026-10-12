@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { servicesData } from "@/data/services";
 import { locationsData } from "@/data/locations";
 import { whatsappLink } from "@/data/site";
+import { Icon } from "@/components/ui/Icon";
 
 /** No backend: the form composes a WhatsApp message and opens it. Nothing is stored. */
 export function LeadForm({ defaultService, defaultArea }: { defaultService?: string; defaultArea?: string }) {
@@ -48,7 +49,7 @@ export function LeadForm({ defaultService, defaultArea }: { defaultService?: str
             exit={{ opacity: 0 }}
           >
             <span className="lead__check" aria-hidden="true">
-              ✓
+              <Icon name="check" />
             </span>
             <h3>Your message is ready.</h3>
             <p>Hit send in WhatsApp and our team will call you back to fix a visit time. If WhatsApp didn&rsquo;t open, use the button below.</p>
@@ -104,7 +105,7 @@ export function LeadForm({ defaultService, defaultArea }: { defaultService?: str
             )}
             <div className="lead__submit">
               <button type="submit" className="btn btn--sky btn--lg">
-                Send on WhatsApp →
+                Send on WhatsApp <Icon name="right" />
               </button>
               <span className="mono">Opens WhatsApp. Nothing is stored here.</span>
             </div>

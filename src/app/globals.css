@@ -1756,8 +1756,14 @@ em {
   align-items: baseline;
 }
 .cta__points li::before {
-  content: "✳";
-  color: var(--sky-soft);
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  align-self: center;
+  background: var(--sky-soft);
+  -webkit-mask: var(--glyph-asterisk) center / contain no-repeat;
+  mask: var(--glyph-asterisk) center / contain no-repeat;
 }
 .cta__call {
   margin: 32px 0 0;
@@ -1851,12 +1857,16 @@ em {
   color: var(--ink);
 }
 .field--select::after {
-  content: "↓";
+  content: "";
   position: absolute;
   right: 0;
-  bottom: 14px;
+  bottom: 18px;
+  width: 16px;
+  height: 16px;
   pointer-events: none;
-  color: var(--mute-on-dark);
+  background: var(--mute-on-dark);
+  -webkit-mask: var(--glyph-down) center / contain no-repeat;
+  mask: var(--glyph-down) center / contain no-repeat;
 }
 .field input:focus,
 .field select:focus {
@@ -2106,4 +2116,66 @@ em {
 /* Keep the header CTA legible over the sky-blue band. */
 .header__cta {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+/* ---- icons ---------------------------------------------------------------
+   SVG glyphs (see components/ui/Icon.tsx) — Unicode arrows render as emoji on phones. */
+:root {
+  --glyph-asterisk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4'/%3E%3C/svg%3E");
+  --glyph-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v16M6 14l6 6 6-6'/%3E%3C/svg%3E");
+}
+.icon {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  flex: none;
+  vertical-align: -0.08em;
+}
+.btn .icon {
+  width: 18px;
+  height: 18px;
+}
+.round-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+.areas__name i {
+  display: inline-flex;
+}
+.areas__name i .icon {
+  width: 1em;
+  height: 1em;
+}
+.svc__arrow,
+.contact__arrow,
+.row-list__link > span:last-child {
+  display: inline-grid;
+  place-items: center;
+  line-height: 1;
+}
+.lead__check .icon {
+  width: 26px;
+  height: 26px;
+}
+.link-xl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+.link-xl .icon {
+  width: 0.7em;
+  height: 0.7em;
+  transition: transform 0.5s var(--ease-out);
+}
+.link-xl:hover .icon {
+  transform: rotate(45deg);
+}
+.link-xl:hover > .roll > span,
+.link-xl:hover > .roll::after {
+  transform: translateY(-100%);
+}
+.footer__bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }

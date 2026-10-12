@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { testimonials } from "@/data/content";
+import { Icon } from "@/components/ui/Icon";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -88,10 +89,10 @@ export function Voices() {
           </div>
           <div className="voices__arrows">
             <button className="round-btn" onClick={() => go(-1)} aria-label="Previous review">
-              ←
+              <Icon name="left" />
             </button>
             <button className="round-btn" onClick={() => go(1)} aria-label="Next review">
-              →
+              <Icon name="right" />
             </button>
           </div>
         </div>
