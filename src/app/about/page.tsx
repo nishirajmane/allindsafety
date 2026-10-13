@@ -29,7 +29,7 @@ export default function AboutPage() {
             Life feels better when it feels <em>safe.</em>
           </>
         }
-        lede="We're a Pune crew that spends its days on other people's balconies — tying knots, tensioning cables and making high-rise living a little less nerve-wracking."
+        lede="We're a Pune crew installing safety nets, invisible grills and bird spikes, spending our days on other people's balconies — tying knots, tensioning cables and making high-rise living a little less nerve-wracking."
       />
 
       <section className="section about" data-theme="light">

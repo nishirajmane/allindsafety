@@ -37,12 +37,13 @@ export function ServicesIndex() {
     <section id="services" className="services section" data-theme="light">
       <div className="wrap">
         <div className="section-head">
-          <p className="mono label">(03) What we install</p>
+          <p className="mono label">(03) Safety nets &amp; invisible grills</p>
           <Reveal as="h2" className="h2">
             Six ways to <em>stay held.</em>
           </Reveal>
           <p className="section-head__aside">
-            Every install is measured on site, fitted with rust-proof stainless hardware and load-tested before we leave.
+            Balcony safety nets, pigeon nets, invisible grills, children and monkey nets, and bird spikes. Each one measured on site,
+            fitted with rust-proof stainless hardware and load-tested before we leave.
           </p>
         </div>
 
@@ -52,7 +53,7 @@ export function ServicesIndex() {
             <li key={s.slug} className="svc__row" onPointerEnter={() => setActive(i)} data-active={active === i || undefined}>
               <Link href={`/services/${s.slug}`} className="svc__link" data-cursor="Explore">
                 <span className="svc__idx mono">0{i + 1}</span>
-                <span className="svc__title">{s.title}</span>
+                <h3 className="svc__title">{s.title}</h3>
                 <span className="svc__meta mono">
                   <span>{s.specs.strength}</span>
                   <span>{short(s.specs.durability)} life</span>

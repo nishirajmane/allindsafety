@@ -28,7 +28,7 @@ export default function ContactPage() {
             Say <em>hello.</em>
           </>
         }
-        lede="A balcony to protect? A pigeon problem to end? Tell us what you need — we'll take it from there."
+        lede="A balcony to protect with safety nets? A pigeon problem to end? Tell us what you need — we'll take it from there."
       >
         <PuneClock />
       </PageHero>

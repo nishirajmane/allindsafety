@@ -21,7 +21,7 @@ export default function LocationsPage() {
             Your neighbourhood. <em>Our next stop.</em>
           </>
         }
-        lede="Local crews across Pune, usually on site within 24 hours. Pick your area for local details — or just call, we probably cover it."
+        lede="Safety nets and invisible grills from local crews across Pune, usually on site within 24 hours. Pick your area for details, or call — we probably cover it."
       />
       <section className="section" data-theme="light">
         <div className="wrap">

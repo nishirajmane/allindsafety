@@ -67,16 +67,20 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="hero__title" aria-label="The sky stays. The risk doesn't.">
-          <span className="line" aria-hidden="true">
+        <h1 className="hero__h1">
+          Safety nets &amp; invisible grills <span>in Pune</span>
+        </h1>
+
+        <div className="hero__title" aria-hidden="true">
+          <span className="line">
             <span>The sky stays.</span>
           </span>
-          <span className="line" aria-hidden="true">
+          <span className="line">
             <span>
               The <em>risk</em> doesn&rsquo;t.
             </span>
           </span>
-        </h1>
+        </div>
 
         <div className="hero__foot">
           <p className="hero__lede">

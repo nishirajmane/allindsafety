@@ -20,7 +20,7 @@ export default function GalleryPage() {
             Real balconies. <em>Really held.</em>
           </>
         }
-        lede={`${work.length} recent installs from across Pune — unfiltered, straight from our crews' phones. Tap any photo to look closer.`}
+        lede={`${work.length} recent safety net and invisible grill installs across Pune — unfiltered, straight from our crews' phones. Tap any photo to look closer.`}
       />
       <GalleryGrid />
       <Cta

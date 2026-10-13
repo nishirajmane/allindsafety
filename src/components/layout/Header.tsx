@@ -11,6 +11,14 @@ import { useLenis } from "@/components/system/SmoothScroll";
 
 const ease = [0.76, 0, 0.24, 1] as const;
 
+// Service keywords stay visible in the header on desktop; the menu lists every service.
+const headerLinks = [
+  { label: "Safety nets", href: "/services/balcony-safety-nets" },
+  { label: "Invisible grills", href: "/services/invisible-grills" },
+  { label: "Work", href: "/gallery" },
+  { label: "Areas", href: "/locations" },
+];
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -57,7 +65,7 @@ export function Header() {
           <Wordmark />
         </Link>
         <nav className="header__nav header__pill" aria-label="Main">
-          {nav.slice(0, 4).map((item) => (
+          {headerLinks.map((item) => (
             <Link key={item.href} href={item.href} className="roll" data-text={item.label}>
               <span>{item.label}</span>
             </Link>

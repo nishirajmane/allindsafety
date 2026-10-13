@@ -2,6 +2,7 @@ import { business, siteOrigin } from "@/data/site";
 import { locationsData } from "@/data/locations";
 import { servicesData } from "@/data/services";
 import { Hero } from "@/components/home/Hero";
+import { ServiceLinks } from "@/components/home/ServiceLinks";
 import { Manifesto } from "@/components/home/Manifesto";
 import { ServicesIndex } from "@/components/home/ServicesIndex";
 import { Anatomy } from "@/components/home/Anatomy";
@@ -55,6 +56,7 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Hero />
+      <ServiceLinks />
       <Manifesto />
       <ServicesIndex />
       <Anatomy />
