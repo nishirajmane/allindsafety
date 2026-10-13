@@ -40,13 +40,13 @@ export function Hero() {
       const q = gsap.utils.selector(el);
       // Explicit start values replace the CSS pre-hide before data-in lifts it.
       gsap.set(q(".hero__title .line > span"), { y: 0, yPercent: 120, rotate: 4 });
-      gsap.set(q(".hero__meta > *, .hero__foot > *"), { opacity: 0, y: 24 });
+      gsap.set(q(".hero__h1, .hero__foot > *"), { opacity: 0, y: 24 });
       el.setAttribute("data-in", "");
       gsap
         .timeline({ defaults: { ease: "expo.out" } })
-        .to(q(".hero__title .line > span"), { yPercent: 0, rotate: 0, duration: 1.5, stagger: 0.1 })
-        .to(q(".hero__meta > *"), { opacity: 1, y: 0, duration: 1, stagger: 0.06 }, 0.3)
-        .to(q(".hero__foot > *"), { opacity: 1, y: 0, duration: 1.2, stagger: 0.08 }, 0.45);
+        .to(q(".hero__h1"), { opacity: 1, y: 0, duration: 0.9 })
+        .to(q(".hero__title .line > span"), { yPercent: 0, rotate: 0, duration: 1.4, stagger: 0.1 }, 0.2)
+        .to(q(".hero__foot > *"), { opacity: 1, y: 0, duration: 1.1, stagger: 0.08 }, 0.5);
     });
     return () => {
       off();
@@ -59,14 +59,6 @@ export function Hero() {
       <NetScene progress={progress} />
       <div className="hero__fade" aria-hidden="true" />
       <div className="hero__content wrap">
-        <div className="hero__meta mono">
-          <span>(01) Safety nets &amp; invisible grills</span>
-          <span className="hide-sm">Pune, MH — 18.53°N 73.89°E</span>
-          <span className="hero__live">
-            <i aria-hidden="true" /> Booking site visits this week
-          </span>
-        </div>
-
         <h1 className="hero__h1">
           Safety nets &amp; invisible grills <span>in Pune</span>
         </h1>
@@ -84,22 +76,22 @@ export function Hero() {
 
         <div className="hero__foot">
           <p className="hero__lede">
-            Safety nets, invisible grills and bird protection for Pune&rsquo;s homes. Measured free, quoted clearly, installed in about
-            two hours — rated to <strong>150&nbsp;kg a knot</strong>.
+            Strong safety nets and invisible grills for your home. We measure for free, give you one clear price, and fit it in about
+            2 hours.
           </p>
           <div className="hero__actions">
             <Magnetic>
               <Link href="/contact" className="btn btn--sky btn--lg">
-                Book a free site visit
+                Book a free visit
               </Link>
             </Magnetic>
             <a href={`tel:${business.phone}`} className="btn btn--ghost btn--lg">
               {business.phoneDisplay}
             </a>
           </div>
-          <p className="hero__hint mono" aria-hidden="true">
+          <p className="hero__hint" aria-hidden="true">
             <span className="hint-dot" /> <span className="hide-touch">Click</span>
-            <span className="show-touch">Tap</span> the net — throw something at it
+            <span className="show-touch">Tap</span> the net to play
           </p>
         </div>
       </div>
