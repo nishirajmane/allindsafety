@@ -2255,3 +2255,23 @@ em {
   min-height: 48px;
 }
 .hero__h1 span { white-space: nowrap; }
+
+/* ---- official logo in the header ----------------------------------------- */
+.header__brand {
+  height: 62px;
+  padding: 0 18px 0 8px;
+}
+.brand-logo {
+  display: block;
+  height: 54px;
+  width: auto;
+}
+@media (max-width: 480px) {
+  .header__brand {
+    height: 56px;
+    padding: 0 12px 0 6px;
+  }
+  .brand-logo {
+    height: 48px;
+  }
+}
