@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Counter } from "@/components/system/Counter";
 import { stats } from "@/data/site";
+import { locationsData } from "@/data/locations";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,6 +73,21 @@ export function Manifesto() {
             </div>
           ))}
         </dl>
+
+        <div className="manifesto__areas" aria-labelledby="manifesto-areas-title">
+          <div className="manifesto__areas-head">
+            <p className="mono label" id="manifesto-areas-title">Where we work</p>
+            <p>Free site visits across Pune &amp; PCMC</p>
+          </div>
+          <nav className="manifesto__area-links" aria-label="Pune service locations">
+            {locationsData.map((location) => (
+              <Link href={`/locations/${location.slug}`} key={location.slug}>
+                {location.name}<span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+            <Link className="manifesto__all-areas" href="/locations">All locations<span aria-hidden="true">→</span></Link>
+          </nav>
+        </div>
       </div>
     </section>
   );
