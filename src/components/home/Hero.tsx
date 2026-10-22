@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { getImageProps } from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,6 +15,22 @@ gsap.registerPlugin(ScrollTrigger);
 export function Hero() {
   const root = useRef<HTMLElement>(null);
   const progress = useRef(0);
+  const { props: desktopPhoto } = getImageProps({
+    src: "/optimized/hero-image-1200.webp",
+    alt: "",
+    width: 1200,
+    height: 800,
+    sizes: "100vw",
+    fetchPriority: "high",
+  });
+  const { props: mobilePhoto, ...mobileImageProps } = getImageProps({
+    src: "/optimized/hero-image-640.webp",
+    alt: "",
+    width: 640,
+    height: 427,
+    sizes: "100vw",
+    fetchPriority: "high",
+  });
 
   useEffect(() => {
     const el = root.current;
@@ -56,6 +73,10 @@ export function Hero() {
 
   return (
     <section ref={root} className="hero" data-theme="dark" data-cursor="Throw">
+      <picture className="hero__photo">
+        <source media="(max-width: 640px)" srcSet={mobilePhoto.srcSet} />
+        <img {...desktopPhoto} {...mobileImageProps} alt="" />
+      </picture>
       <NetScene progress={progress} />
       <div className="hero__fade" aria-hidden="true" />
       <div className="hero__content wrap">

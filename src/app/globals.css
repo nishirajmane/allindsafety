@@ -7,18 +7,18 @@
    ========================================================================== */
 
 :root {
-  --ink: #0b0c0e;
-  --ink-2: #141619;
-  --ink-3: #1d2024;
-  --paper: #eeede8;
-  --paper-2: #e3e1da;
-  --sky: #3346ff;
-  --sky-deep: #2433d6;
-  --sky-soft: #a3b2ff;
-  --mute-on-light: #5f5e59;
-  --mute-on-dark: #9b9a95;
-  --line-on-light: rgba(11, 12, 14, 0.14);
-  --line-on-dark: rgba(238, 237, 232, 0.14);
+  --ink: #102031;
+  --ink-2: #162a3e;
+  --ink-3: #20384f;
+  --paper: #f4f1e9;
+  --paper-2: #e8e1d4;
+  --sky: #c99d4a;
+  --sky-deep: #98712f;
+  --sky-soft: #edcc82;
+  --mute-on-light: #66645e;
+  --mute-on-dark: #c3c4c2;
+  --line-on-light: rgba(16, 32, 49, 0.14);
+  --line-on-dark: rgba(244, 241, 233, 0.2);
 
   --gutter: clamp(16px, 4vw, 56px);
   --header-h: 72px;
@@ -271,7 +271,7 @@ em {
 }
 .btn--sky {
   background: var(--sky);
-  color: #fff;
+  color: #142434;
 }
 .btn--sky::before {
   background: var(--ink);
@@ -661,9 +661,25 @@ em {
   touch-action: pan-y;
   user-select: none;
 }
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #17283a;
+}
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  opacity: .78;
+  transform: scale(1.02);
+}
 .net-scene {
   position: absolute;
   inset: 0;
+  z-index: 1;
 }
 .net-scene canvas {
   display: block;
@@ -678,7 +694,8 @@ em {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(11, 12, 14, 0.55) 0%, transparent 22%, transparent 45%, rgba(11, 12, 14, 0.82) 82%, var(--ink) 100%);
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(12, 27, 42, 0.72) 0%, rgba(12, 27, 42, 0.28) 55%, rgba(12, 27, 42, 0.18) 100%), linear-gradient(180deg, rgba(12, 27, 42, 0.35) 0%, transparent 22%, rgba(12, 27, 42, 0.1) 42%, rgba(12, 27, 42, 0.78) 78%, var(--ink) 100%);
 }
 .hero__content {
   position: absolute;
@@ -690,6 +707,7 @@ em {
   padding-top: calc(var(--header-h) + 24px);
   padding-bottom: clamp(24px, 4vh, 44px);
   pointer-events: none;
+  z-index: 3;
 }
 .hero__content a,
 .hero__content button {
@@ -2056,44 +2074,64 @@ em {
 /* ---- mobile dock --------------------------------------------------------- */
 .dock {
   position: fixed;
-  left: 10px;
-  right: 10px;
-  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 80;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  transform: translateY(150%);
-  transition: transform 0.7s var(--ease-out);
-}
-.dock[data-show="true"] {
-  transform: none;
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(16, 32, 49, 0.96);
+  border-top: 1px solid rgba(244, 241, 233, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .dock a {
   display: grid;
   place-items: center;
-  min-height: 54px;
-  padding: 0 22px;
+  min-height: 48px;
+  padding: 0 6px;
   border-radius: 999px;
-  font-size: 15px;
-  font-weight: 500;
-  background: rgba(11, 12, 14, 0.78);
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(244, 241, 233, 0.1);
   color: var(--paper);
   border: 1px solid var(--line-on-dark);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  white-space: nowrap;
+}
+.dock a span {
+  display: none;
+}
+.dock .dock__whatsapp {
+  color: #d4e9df;
+  border-color: rgba(144, 197, 168, .45);
 }
 .dock .dock__primary {
   background: var(--sky);
   border-color: var(--sky);
-  color: #fff;
+  color: #142434;
 }
 @media (min-width: 768px) {
   .dock {
     display: none;
   }
 }
-
+@media (max-width: 767px) {
+  body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  .hero { min-height: 680px; min-height: max(680px, 92svh); }
+  .hero__photo img { object-position: 57% center; }
+  .hero__fade {
+    background: linear-gradient(180deg, rgba(12, 27, 42, .08) 0%, rgba(12, 27, 42, .1) 28%, rgba(12, 27, 42, .68) 54%, rgba(12, 27, 42, .94) 78%, var(--ink) 100%);
+  }
+  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: 30px; gap: 18px; }
+  .hero__h1 { max-width: 24ch; font-size: clamp(19px, 5vw, 25px); }
+  .hero__title { font-size: clamp(48px, 12.6vw, 82px); }
+  .hero__lede { max-width: 34ch; font-size: 16px; }
+  .hero__hint { display: none; }
+  .hero__actions { gap: 8px; }
+  .hero__actions .btn--lg { min-height: 52px; font-size: 15px; padding-inline: 17px; }
+}
 /* ---- reduced motion ------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   .js [data-reveal] {
@@ -2274,4 +2312,19 @@ em {
   .brand-logo {
     height: 48px;
   }
+}
+
+@media (max-width: 767px) {
+  .hero { min-height: max(680px, 92svh); }
+  .hero__photo img { object-position: 57% center; }
+  .hero__fade {
+    background: linear-gradient(180deg, rgba(12, 27, 42, .08) 0%, rgba(12, 27, 42, .1) 28%, rgba(12, 27, 42, .68) 54%, rgba(12, 27, 42, .94) 78%, var(--ink) 100%);
+  }
+  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: 30px; gap: 18px; }
+  .hero__h1 { max-width: 24ch; font-size: clamp(19px, 5vw, 25px); }
+  .hero__title { font-size: clamp(48px, 12.6vw, 82px); }
+  .hero__lede { max-width: 34ch; font-size: 16px; }
+  .hero__hint { display: none; }
+  .hero__actions { gap: 8px; }
+  .hero__actions .btn--lg { min-height: 52px; font-size: 15px; padding-inline: 17px; }
 }

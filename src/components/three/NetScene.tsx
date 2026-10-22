@@ -10,9 +10,9 @@ import { onReady } from "@/components/system/ready";
  * net away as the hero scrolls out.
  */
 
-const INK = new THREE.Color("#0b0c0e");
-const THREAD = new THREE.Color("#eeede8");
-const TENSION = new THREE.Color("#8fa2ff");
+const INK = new THREE.Color("#102031");
+const THREAD = new THREE.Color("#e7d6b3");
+const TENSION = new THREE.Color("#e2b95f");
 
 const vertexShader = /* glsl */ `
   attribute vec3 color;
@@ -70,7 +70,7 @@ export function NetScene({ progress }: { progress?: RefObject<number> }) {
     scene.fog = new THREE.Fog(INK, 9, 19);
     const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 60);
     camera.position.set(0, 0, 10);
-    scene.add(new THREE.HemisphereLight("#dfe5ff", "#0b0c0e", 1.6));
+    scene.add(new THREE.HemisphereLight("#f0e6d3", "#102031", 1.6));
     const sun = new THREE.DirectionalLight("#ffffff", 2.4);
     sun.position.set(3, 5, 8);
     scene.add(sun);
@@ -184,7 +184,7 @@ export function NetScene({ progress }: { progress?: RefObject<number> }) {
 
     const balls: Ball[] = [];
     const ballGeometry = new THREE.SphereGeometry(1, 32, 24);
-    const ballMaterial = new THREE.MeshStandardMaterial({ color: "#3346ff", roughness: 0.35, metalness: 0.1, emissive: "#1b2499", emissiveIntensity: 0.35 });
+    const ballMaterial = new THREE.MeshStandardMaterial({ color: "#d0a54e", roughness: 0.35, metalness: 0.1, emissive: "#72521c", emissiveIntensity: 0.35 });
     const G = 6.5;
     const down = new THREE.Vector3();
     const inverse = new THREE.Quaternion();

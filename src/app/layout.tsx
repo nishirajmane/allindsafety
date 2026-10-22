@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-export const viewport: Viewport = { themeColor: "#0b0c0e", colorScheme: "dark light" };
+export const viewport: Viewport = { themeColor: "#102031", colorScheme: "dark light" };
 
 // Runs before paint: marks JS as available and skips the intro for repeat visits this session.
 const boot = `document.documentElement.classList.add('js');try{if(sessionStorage.getItem('allind-seen'))document.documentElement.classList.add('seen')}catch(e){}`;
