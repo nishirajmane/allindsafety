@@ -2178,7 +2178,7 @@ em {
   .hero__fade {
     background: linear-gradient(180deg, rgba(12, 27, 42, .08) 0%, rgba(12, 27, 42, .1) 28%, rgba(12, 27, 42, .68) 54%, rgba(12, 27, 42, .94) 78%, var(--ink) 100%);
   }
-  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: 30px; gap: 18px; }
+  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: calc(96px + env(safe-area-inset-bottom)); gap: 18px; }
   .hero__h1 { max-width: 24ch; font-size: clamp(19px, 5vw, 25px); }
   .hero__title { font-size: clamp(48px, 12.6vw, 82px); }
   .hero__lede { max-width: 34ch; font-size: 16px; }
@@ -2374,7 +2374,7 @@ em {
   .hero__fade {
     background: linear-gradient(180deg, rgba(12, 27, 42, .08) 0%, rgba(12, 27, 42, .1) 28%, rgba(12, 27, 42, .68) 54%, rgba(12, 27, 42, .94) 78%, var(--ink) 100%);
   }
-  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: 30px; gap: 18px; }
+  .hero__content { padding-top: calc(var(--header-h) + 44px); padding-bottom: calc(96px + env(safe-area-inset-bottom)); gap: 18px; }
   .hero__h1 { max-width: 24ch; font-size: clamp(19px, 5vw, 25px); }
   .hero__title { font-size: clamp(48px, 12.6vw, 82px); }
   .hero__lede { max-width: 34ch; font-size: 16px; }
