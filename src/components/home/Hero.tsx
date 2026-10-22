@@ -23,7 +23,7 @@ export function Hero() {
     sizes: "100vw",
     fetchPriority: "high",
   });
-  const { props: mobilePhoto, ...mobileImageProps } = getImageProps({
+  const { props: mobilePhoto } = getImageProps({
     src: "/optimized/hero-image-640.webp",
     alt: "",
     width: 640,
@@ -74,8 +74,8 @@ export function Hero() {
   return (
     <section ref={root} className="hero" data-theme="dark" data-cursor="Throw">
       <picture className="hero__photo">
-        <source media="(max-width: 640px)" srcSet={mobilePhoto.srcSet} />
-        <img {...desktopPhoto} {...mobileImageProps} alt="" />
+        <source media="(max-width: 640px)" srcSet={mobilePhoto.src} />
+        <img {...desktopPhoto} alt="" />
       </picture>
       <NetScene progress={progress} />
       <div className="hero__fade" aria-hidden="true" />
