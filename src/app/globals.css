@@ -2382,3 +2382,15 @@ em {
   .hero__actions { gap: 8px; }
   .hero__actions .btn--lg { min-height: 52px; font-size: 15px; padding-inline: 17px; }
 }
+
+.home-guide { background: var(--paper); color: var(--ink); }
+.home-guide .h2 { max-width: 17ch; }
+.home-guide__intro { max-width: 68ch; margin: 28px 0 48px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.6; }
+.home-guide__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.home-guide__card { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line-on-light); border-radius: 16px; }
+.home-guide__card h3 { margin: 0 0 14px; font-size: 25px; line-height: 1.15; }
+.home-guide__card p, .home-guide__help p { font-size: 17px; line-height: 1.6; }
+.home-guide__card a { display: inline-block; margin-top: 12px; color: var(--sky); text-decoration: underline; text-underline-offset: 4px; }
+.home-guide__help { margin-top: 56px; padding: clamp(24px, 4vw, 56px); background: #e3e7ea; border-radius: 16px; }
+.home-guide__help h2 { margin: 0; font-size: clamp(28px, 3vw, 44px); line-height: 1.1; }
+.home-guide__help p { max-width: 65ch; margin: 20px 0 24px; }

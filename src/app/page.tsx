@@ -12,6 +12,7 @@ import { Voices } from "@/components/home/Voices";
 import { Areas } from "@/components/home/Areas";
 import { Faq } from "@/components/home/Faq";
 import { Cta } from "@/components/home/Cta";
+import { HomeGuide } from "@/components/home/HomeGuide";
 
 export default function Home() {
   const schema = {
@@ -59,6 +60,7 @@ export default function Home() {
       <ServiceLinks />
       <Manifesto />
       <ServicesIndex />
+      <HomeGuide />
       <Anatomy />
       <Process />
       <WorkReel />
