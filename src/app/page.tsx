@@ -1,18 +1,7 @@
 import { business, siteOrigin } from "@/data/site";
 import { locationsData } from "@/data/locations";
 import { servicesData } from "@/data/services";
-import { Hero } from "@/components/home/Hero";
-import { ServiceLinks } from "@/components/home/ServiceLinks";
-import { Manifesto } from "@/components/home/Manifesto";
-import { ServicesIndex } from "@/components/home/ServicesIndex";
-import { Anatomy } from "@/components/home/Anatomy";
-import { Process } from "@/components/home/Process";
-import { WorkReel } from "@/components/home/WorkReel";
-import { Voices } from "@/components/home/Voices";
-import { Areas } from "@/components/home/Areas";
-import { Faq } from "@/components/home/Faq";
-import { Cta } from "@/components/home/Cta";
-import { HomeGuide } from "@/components/home/HomeGuide";
+import { ReferenceHome } from "@/components/home/ReferenceHome";
 
 export default function Home() {
   const schema = {
@@ -56,18 +45,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Hero />
-      <ServiceLinks />
-      <Manifesto />
-      <ServicesIndex />
-      <HomeGuide />
-      <Anatomy />
-      <Process />
-      <WorkReel />
-      <Voices />
-      <Areas />
-      <Faq />
-      <Cta label="(10) Free site visit" />
+      <ReferenceHome />
     </>
   );
 }
